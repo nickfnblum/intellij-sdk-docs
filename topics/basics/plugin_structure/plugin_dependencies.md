@@ -45,10 +45,24 @@ For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 
 ### Bundled and Other Plugins
 
+<tabs>
+
+<tab title="Gradle">
+
 When using [Gradle IntelliJ Plugin](developing_plugins.md), all bundled plugin IDs can be gathered using [`listBundledPlugins`](tools_gradle_intellij_plugin.md#tasks-listbundledplugins) task.
 
+For [](tools_intellij_platform_gradle_plugin.md), use [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins) task.
+
+</tab>
+
+<tab title="DevKit or non-public plugins">
+
 When using [DevKit](developing_themes.md) and for non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with [`<id>`](plugin_configuration_file.md#idea-plugin__id) tag (or [`<name>`](plugin_configuration_file.md#idea-plugin__name) if not specified).
-Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
+Bundled plugins are located in <path>\$PRODUCT_ROOT\$/plugins/\$PLUGIN_NAME\$/lib/\$PLUGIN_NAME\$.jar</path>.
+
+</tab>
+
+</tabs>
 
 #### IDs of Bundled Plugins
 
@@ -132,7 +146,7 @@ Add the JARs of the plugin on which the project depends to the <control>Classpat
 2. Select the SDK used in the project.
 3. Click the <control>+</control> button in the <control>Classpath</control> tab.
 4. Select the plugin JAR depending on whether it is bundled or non-bundled plugin:
-   - For bundled plugins, the plugin JAR files are located in <path>plugins/$PLUGIN_NAME$</path> or <path>plugins/$PLUGIN_NAME$/lib</path> under the main installation directory.
+   - For bundled plugins, the plugin JAR files are located in <path>plugins/\$PLUGIN_NAME\$</path> or <path>plugins/\$PLUGIN_NAME\$/lib</path> under the main installation directory.
    - For non-bundled plugins, depending on the platform version, the plugin JAR files are located in:
      - [plugins directory for versions 2020.1+](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#plugins-directory)
      - [plugins directory for versions pre-2020.1](https://www.jetbrains.com/help/idea/2019.3/tuning-the-ide.html#plugins-directory)
@@ -171,7 +185,7 @@ Declare additional `optional="true"` and required `config-file` attribute pointi
     config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
 ```
 
-> Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
+> Additional plugin descriptor files must follow the naming pattern <path>myPluginId-\$NAME\$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
 >
 {style="note"}
 

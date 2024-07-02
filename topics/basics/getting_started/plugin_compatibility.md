@@ -37,8 +37,9 @@ Some modules are available in all products, and some modules are available only 
 This section identifies and discusses modules of both types.
 
 ### Declaring Incompatibility with Module
+<primary-label ref="2020.2"/>
 
-Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying [`<incompatible-with>`](plugin_configuration_file.md#idea-plugin__incompatible-with) containing module ID in its <path>plugin.xml</path>.
+A plugin can declare incompatibility with an arbitrary module by specifying [`<incompatible-with>`](plugin_configuration_file.md#idea-plugin__incompatible-with) containing module ID in its <path>plugin.xml</path>.
 
 ### Modules Available in All Products
 
@@ -102,6 +103,7 @@ This refactoring separated the Java implementation from the other, non-language 
 A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be setup using [](plugin_dependencies.md).
 
 #### AppCode/CLion
+<primary-label ref="2020.3"/>
 
 The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
 This refactoring extracted some functionalities into specific modules for easier maintainability and reuse between AppCode/CLion and other JetBrains IDEs.

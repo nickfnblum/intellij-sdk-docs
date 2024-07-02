@@ -8,6 +8,8 @@ This documentation page describes a Gradle-based plugin project generated with t
 
 ## Creating a Plugin with New Project Wizard
 
+<include from="snippets.md" element-id="gradlePluginVersion"/>
+
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
 <include from="snippets.md" element-id="pluginDevKitAvailability"/>
@@ -22,9 +24,9 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
    For this example select the <control>Kotlin</control> option.
    See also [Kotlin for Plugin Developers](using_kotlin.md) for more information.
 
-   > Projects generated with IntelliJ IDEA 2023.1 or newer, support both Kotlin and Java sources out of the box.
-   > Project generator automatically creates <path>$PLUGIN_DIR$/src/main/kotlin</path> sources directory.
-   > To add Java sources, create <path>$PLUGIN_DIR$/src/main/java</path> directory.
+   > Projects generated with IntelliJ IDEA 2023.1 or newer support both Kotlin and Java sources out of the box.
+   > Project generator automatically creates <path>\$PLUGIN_DIR\$/src/main/kotlin</path> sources directory.
+   > To add Java sources, create <path>\$PLUGIN_DIR\$/src/main/java</path> directory.
    >
    {style="note"}
 
@@ -93,7 +95,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 plugins {
   id("java")
   id("org.jetbrains.kotlin.jvm") version "1.9.21"
-  id("org.jetbrains.intellij") version "1.17.3"
+  id("org.jetbrains.intellij") version "1.17.4"
 }
 
 group = "com.example"

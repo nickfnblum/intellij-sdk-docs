@@ -52,7 +52,7 @@ Every page **should** provide a short excerpt (usually one sentence) using dedic
 A page can highlight related topics and other important links before the actual content using `<tldr>` tag.
 Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
 
-Use _Reference_ to link to other topics, _Code_ to link to code/files, _UI Guidelines_ for links to [UI Guidelines](ui_guidelines_welcome.md), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
+Use _Reference_ to link to other topics, _Code_ to link to code/files, _UI Guidelines_ for links to [UI Guidelines](ui_guidelines_welcome.topic), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
 
 #### Introductory Text
 
@@ -94,6 +94,7 @@ Consistent text styles are used to standardize references and keywords:
 * Filenames are wrapped using `<path>`: `<path>build.gradle.kts</path>` <path>build.gradle.kts</path>.
 * File formats are shown as all capital letters: PNG and XML.
 * Filename extensions are not capitalized when part of a full filename, path, or URL: <path>plugin.xml</path>.
+* When using \$PLACEHOLDER\$ in non-code parts, it must be escaped: `<path>\$PLACEHOLDER\$/somePath</path>`.
 * Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".
 * See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for best practices for representing code fragments.
 * See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.

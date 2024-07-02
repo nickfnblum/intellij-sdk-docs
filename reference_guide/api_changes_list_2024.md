@@ -79,7 +79,21 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### Python Plugin 2024.2
 `com.jetbrains.python.PyElementTypes.STATEMENT_LIST` field type changed from `PyElementType` to `IElementType`
-: Update code usages. 
+: Update code usages.
+
+### Kotlin Plugin 2024.2
+
+`org.jetbrains.kotlin.analysis.low.level.api.fir.LLFirResolveSessionService.getFirResolveSessionNoCaching(module: KtModule)` method removed
+: Internals of Kotlin plugin.
+
+`org.jetbrains.kotlin.analysis.project.structure.ProjectStructureProvider.Companion.getModule(Project, PsiElement, KtModule)` method removed
+: Use `org.jetbrains.kotlin.analysis.api.projectStructure.KaModuleProvider.Companion.getModule(Project, PsiElement, KtModule)` instead.
+
+`org.jetbrains.kotlin.codegen.state.TypeMappingUtil.getJVM_SUPPRESS_WILDCARDS_ANNOTATION_FQ_NAME` method removed
+: Use `org.jetbrains.kotlin.name.JvmStandardClassIds.getJVM_SUPPRESS_WILDCARDS_ANNOTATION_FQ_NAME` instead.
+
+`org.jetbrains.kotlin.fir.types.ConeTypeUtilsKt.renderReadableWithFqNames(ConeKotlinType)` method removed
+: Internals of Kotlin compiler.
 
 ## 2024.1
 

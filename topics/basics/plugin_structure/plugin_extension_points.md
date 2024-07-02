@@ -61,6 +61,7 @@ The plugin that contributes to the extension point will read those properties fr
 
 If extension implementations are filtered according to [dumb mode](indexing_and_psi_stubs.md#dumb-mode), the base class should be
 marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
+Use [`DumbService.getDumbAwareExtensions()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt) to retrieve dumb-aware implementations.
 
 Base classes for extensions requiring a key:
 
@@ -167,11 +168,12 @@ To report use of deprecated API, use `PluginException.reportDeprecatedUsage()` m
 - [`InspectionProfileEntry.getDisplayName()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionProfileEntry.java)
 
 ## Dynamic Extension Points
+<primary-label ref="2020.1"/>
 
-To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:
+To support [Dynamic Plugins](dynamic_plugins.md), an extension point must adhere to specific usage rules:
 
 - extensions are enumerated on every use and extensions instances are not stored anywhere
-- alternatively, an [`ExtensionPointListener`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointListener.kt) can perform necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
+- alternatively, an [`ExtensionPointListener`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointListener.kt) can perform any necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
 
 Extension points matching these conditions can then be marked as _dynamic_ by adding `dynamic="true"` in their declaration:
 
@@ -184,5 +186,4 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
 </extensionPoints>
 ```
 
-> All non-dynamic extension points are highlighted via <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection available in IntelliJ IDEA 2020.1 or later.
-> Previous versions also highlight the `dynamic` attribute as "experimental".
+All non-dynamic extension points are highlighted via <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection.
