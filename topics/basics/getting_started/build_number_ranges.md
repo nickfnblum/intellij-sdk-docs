@@ -6,7 +6,9 @@
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](configuring_plugin_project.md#patching-the-plugin-configuration-file).
+Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by the `patchPluginXml` Gradle task
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml)).
+See [](configuring_plugin_project.md#patching-the-plugin-configuration-file) for further details.
 
 ### Build Number Validity
 
@@ -93,13 +95,13 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 242                                                             | 2024.2 **NOTE** Java 21 is now required                                                                                                  |
+| [242](https://github.com/JetBrains/intellij-community/tree/242) | 2024.2 **NOTE** Java 21 is now required                                                                                                  |
 | [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                                                                                                                   |
 | [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                                                                                                                   |
 | [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
 
-#### Earlier versions
+#### Earlier Versions
 {collapsible="true"}
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |

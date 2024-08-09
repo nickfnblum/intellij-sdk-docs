@@ -4,20 +4,6 @@
 
 <link-summary>FAQ for using IntelliJ Platform Gradle Plugin</link-summary>
 
-### How to modify JVM arguments of the `runIde` task?
-
-[`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task is a [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
-
-To add some JVM arguments while launching the IDE, configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task as follows:
-
-```kotlin
-tasks {
-  runIde {
-    jvmArgs("-DmyProperty=value")
-  }
-}
-```
-
 ### How to modify system properties of the `runIde` task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
@@ -25,12 +11,71 @@ Using the [very same task documentation](https://docs.gradle.org/current/dsl/org
 ```kotlin
 tasks {
   runIde {
-    systemProperty("name", "value")
+    jvmArgumentProviders += CommandLineArgumentProvider {
+      listOf("-Dname=value")
+    }
   }
 }
 ```
 
-### How to disable automatic reload of dynamic plugins?
+### Task `runIdeForUiTests` not found
+
+The [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) is no longer registered by default.
+Follow the task documentation for more details.
+
+### Missing `opentest4j` dependency in Test Framework
+
+Due to the [IJPL-157292](https://youtrack.jetbrains.com/issue/IJPL-157292/lib-testFramework.jar-is-missing-library-opentest4j) issue, the `opentest4j` dependency is not resolved when using `TestFrameworkType.Platform` or `TestFrameworkType.JUnit5`.
+
+This results in the `NoClassDefFoundError` exception:
+
+```
+java.lang.NoClassDefFoundError: org/opentest4j/AssertionFailedError
+```
+
+To apply the workaround, add the missing `org.opentest4j:opentest4j` test dependency to your Gradle build configuration:
+
+```kotlin
+dependencies {
+  // ...
+  testImplementation("org.opentest4j:opentest4j:1.3.0")
+}
+```
+
+### JUnit5 Test Framework refers to JUnit4
+
+Due to the [IJPL-159134](https://youtrack.jetbrains.com/issue/IJPL-159134/JUnit5-Test-Framework-refers-to-JUnit4-java.lang.NoClassDefFoundError-junit-framework-TestCase) issue, the JUnit5 Test Framework refers to JUnit4 classes when running test.
+
+This results in the `NoClassDefFoundError` exceptions:
+
+```
+Caused by: java.lang.NoClassDefFoundError: junit/framework/TestCase
+
+Caused by: java.lang.NoClassDefFoundError: org/junit/rules/TestRule
+```
+
+To apply the workaround, add the JUnit4 test runtime dependency to your Gradle build configuration:
+
+```kotlin
+dependencies {
+  // ...
+  testRuntimeOnly("junit:junit:4.13.2")
+}
+```
+
+### Dependency on bundled plugin is not resolved after migrating from 1.x
+
+{id="migrateToPluginId"}
+
+Using [](tools_gradle_intellij_plugin.md), specifying the _directory name_ of the plugin was possible when adding a dependency on a bundled plugin
+for compatibility reasons.
+Now, using the actual plugin ID is required.
+For example, provide plugin ID `com.intellij.java` instead of its directory name `java`.
+A migration hint is provided for this and some other commonly used cases.
+
+See [](plugin_dependencies.md#bundled-and-other-plugins) on how to get all bundled plugin IDs as well as a list of some commonly used ones.
+
+### How to disable the automatic reload of dynamic plugins?
 
 See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
@@ -42,7 +87,7 @@ intellijPlatform {
 }
 ```
 
-It is also possible to disable it for a specific [`runIde`](tools_gradle_intellij_plugin.md#tasks-runide)-based task as follows:
+It is also possible to disable it for a specific [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde)-based task as follows:
 
 ```kotlin
 tasks {
@@ -52,18 +97,26 @@ tasks {
 }
 ```
 
-### How to disable building searchable options?
+### How to disable building the searchable options?
 
-Building searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
+Building the searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
 
 ```kotlin
 intellijPlatform {
-  buildSearchableOptions  = false
+  buildSearchableOptions = false
 }
 ```
 
 As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
+
+### Gradle fails with `The request for this plugin could not be satisfied`
+
+Gradle may fail with the following exception if the IntelliJ Platform Gradle Plugin is applied to the project multiple times with version specified more than once:
+
+`The request for this plugin could not be satisfied because the plugin is already on the classpath with an unknown version, so compatibility cannot be checked.`
+
+If you apply the plugin in the <path>settings.gradle.kts</path> file, the version needs to be omitted when applying it in other <path>build.gradle.kts</path> files.
 
 ### How to show the log file of a sandbox instance?
 
@@ -80,7 +133,27 @@ See [Migrating from Gradle IntelliJ Plugin](tools_intellij_platform_gradle_plugi
 
 See the [](bundling_plugin_openapi_sources.md) section for details.
 
-### JaCoCo reports 0% coverage
+### How to mute specific problems in `pluginVerification`?
+
+{id="mutePluginVerifierProblems"}
+
+To mute specific problems (for example, use of specific forbidden words in the plugin name), use the [`freeArgs`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-freeArgs) parameter to pass a comma-separated list of problem IDs to be muted.
+
+See the list of [available options](https://github.com/JetBrains/intellij-plugin-verifier/?tab=readme-ov-file#specific-options).
+
+```kotlin
+intellijPlatform {
+  pluginVerification {
+    // ...
+    freeArgs = listOf(
+      "-mute",
+      "TemplateWordInPluginId,ForbiddenPluginIdPrefix"
+    )
+  }
+}
+```
+
+### JaCoCo Reports 0% Coverage
 
 The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the `PathClassLoader` class loader by the following system property:
 
@@ -139,11 +212,9 @@ jacocoTestCoverageVerification {
 </tab>
 </tabs>
 
-
 ### Kotlin compiler throws `Out of memory. Java heap space` error
 
 Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilation) section if using Kotlin 1.8.20.
-
 
 ### How to check the latest available EAP release?
 
@@ -168,7 +239,6 @@ tasks {
 When running tests or IDE with your plugin loaded, it is necessary to use JetBrains Runtime (JBR).
 In the case, no JBR is found in the plugin configuration, there's the following warning logged by the [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task:
 
-
 ```
 The currently selected Java Runtime is not JetBrains Runtime (JBR).
 This may lead to unexpected IDE behaviors.
@@ -177,6 +247,7 @@ or define it explicitly with project dependencies or JVM Toolchain.
 ```
 
 To correctly run your tests or a specific IDE:
+
 - use a binary IDE distribution with bundled JetBrains Runtime, i.e., by referring to a local IDE [`local(localPath)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
   ```kotlin
   repositories {
@@ -208,7 +279,7 @@ To correctly run your tests or a specific IDE:
   dependencies {
     intellijPlatform {
       intellijIdeaCommunity("%ijPlatform%")
-      jetbrainsRuntime(...)
+      jetbrainsRuntime("...")
     }
   }
   ```
@@ -221,6 +292,5 @@ To correctly run your tests or a specific IDE:
     }
   }
   ```
-
 
 <include from="snippets.md" element-id="missingContent"/>

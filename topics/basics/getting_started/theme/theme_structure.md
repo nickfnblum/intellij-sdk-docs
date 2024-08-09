@@ -7,9 +7,7 @@
 Themes are components within [IntelliJ Platform plugins](plugin_structure.topic).
 The theme plugins should be stand-alone and not combined with other plugin functionality.
 
-> To see a full example theme project, see the [Theme Basics](%gh-sdk-samples-master%/theme_basics) in IntelliJ SDK Code Samples.
->
-{style="note"}
+<include from="developing_themes.md" element-id="themeSamplePlugin"/>
 
 Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.
@@ -37,7 +35,7 @@ The content of the default file generated with the [Theme wizard](creating_theme
 }
 ```
 
-* `name` key matches the first portion of the Theme description <path>$THEME_NAME$.theme.json</path> file name. The value of `name` is displayed in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) <control>Settings</control> dropdown when the theme's plugin is installed in the IDE.
+* `name` key matches the first portion of the Theme description <path>\$THEME_NAME\$.theme.json</path> file name. The value of `name` is displayed in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) <control>Settings</control> dropdown when the theme's plugin is installed in the IDE.
 * `author` - specifies the theme author (empty by default).
 * `dark` - determines the base theme (_Light_ or _Darcula_) that is customized.
 * `editorScheme` - specifies the editor scheme file that describes fonts and colors used in editors (see [](themes_extras.md#adding-a-custom-editor-scheme) for more details).

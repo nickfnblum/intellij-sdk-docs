@@ -15,7 +15,7 @@ A library is an archive of compiled code (such as JAR files) that modules depend
 The IntelliJ Platform supports three types of libraries:
 * **Module Library**: the library classes are visible only in this module and the library information is recorded in the module <path>.iml</path> file.
 * **Project Library**: the library classes are visible within the project and the library information is recorded under <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
-* **Global Library**: the library information is recorded in the <path>applicationLibraries.xml</path> file in <path>$USER_HOME$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries, but are visible for different projects.
+* **Global Library**: the library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries, but are visible for different projects.
 
 A particular type of programmatically defined libraries is [Predefined Libraries](#predefined-libraries).
 
@@ -66,7 +66,7 @@ Messages.showInfoMessage(roots.toString(), "Library Info");
 
 ### Creating a Library
 To create a library, perform the following steps:
-  * Get a [write action](general_threading_rules.md#read-write-lock)
+  * Get a [write action](threading_model.md#write-actions)
   * Obtain the library table to which you want to add the library. Use one of the following, depending on the library level:
       * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
       * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
@@ -80,13 +80,13 @@ You can find an example of using these APIs in the [project_model](%gh-sdk-sampl
 
 ### Adding Contents or Modifying a Library
 To add or change the roots of a library, you need to perform the following steps:
-  * Get a [write action](general_threading_rules.md#read-write-lock)
+  * Get a [write action](threading_model.md#write-actions)
   * Get a **modifiable model** for the library, using `Library.getModifiableModel()`
   * Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes
   * Commit the model using `Library.ModifiableModel.commit()`.
 
 ### Adding a Library Dependency to a Module
-Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [write action](general_threading_rules.md#read-write-lock).
+Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [write action](threading_model.md#write-actions).
 
 ### Checking Belonging to a Library
 The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.

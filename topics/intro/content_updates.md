@@ -12,8 +12,27 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2024
 
+### July
+{july-24}
+
+Threading Model
+:
+Revamp the [Threading Model](threading_model.md) page (formerly _General Threading Rules_) and add a new page describing [background processes](background_processes.md), including cancellation and progress tracking.
+
+Coroutines Read Actions
+:
+Added FAQ section and explanation of [why suspending inside the block is not allowed](coroutine_read_actions.topic#why-can-t-i-suspend-inside-the-block).
+
+### June
+{june-24}
+
+Code Formatter
+: Rework [](code_formatting.md) page, extending explanations and updating content.
+
+
 ### May
 {may-24}
+
 Minor Changes and Additions
 :
 - How to support [grammar checks](spell_checking.md#grammar-checks) provided by Grazie plugin in custom languages.
@@ -90,7 +109,7 @@ Inlay Hints
 : Update [](inlay_hints.md) page with the information about new APIs.
 
 Threading Model
-: Update [](general_threading_rules.md) to reflect changes in 2023.3 platform.
+: Update [](threading_model.md) to reflect changes in 2023.3 platform.
 
 Minor Changes and Additions
 :
@@ -446,7 +465,7 @@ Plugin Repository moved
 {#july-19}
 
 New page: Optimizing Performance
-: Optimizing performance when [working with PSI](psi_performance.md), [during indexing](indexing_and_psi_stubs.md#improving-indexing-performance), and [](general_threading_rules.md#avoiding-ui-freezes).
+: Optimizing performance when [working with PSI](psi_performance.md), [during indexing](indexing_and_psi_stubs.md#improving-indexing-performance), and [](threading_model.md#avoiding-ui-freezes).
 
 ### May
 {#may-19}

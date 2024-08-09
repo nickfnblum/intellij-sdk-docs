@@ -2,6 +2,8 @@
 
 # Language Server Protocol (LSP)
 
+<primary-label ref="CommercialIDEs"/>
+
 <link-summary>Language Server Protocol (LSP) support in IntelliJ-based IDEs</link-summary>
 
 The [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP) is an open-standard protocol developed by Microsoft. It enables communication between development tools and Language Servers.
@@ -13,20 +15,53 @@ Therefore, the LSP approach shouldn't be considered as a replacement for the exi
 
 ## Supported IDEs
 
+<primary-label ref="2023.2"/>
+
 The integration with the Language Server Protocol is created as an extension to the *paid* IntelliJ-based IDEs.
 Therefore, plugins using Language Server integration are not available in Community releases of JetBrains products and Android Studio from Google.
 
-Starting with the 2023.2 release cycle, the LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
+The LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
 IntelliJ IDEA Ultimate, WebStorm, PhpStorm, PyCharm Professional, DataSpell, RubyMine, CLion, Aqua, DataGrip, GoLand, Rider, and RustRover.
 
-## Plugin Configuration
+## LSP Plugin Setup
 
-To use the LSP API in a third-party plugin based on the [](tools_gradle_intellij_plugin.md), it is required to upgrade the Gradle IntelliJ Plugin to the latest version available.
-This plugin will attach the LSP API sources and code documentation to the project.
+The plugin must target [](idea_ultimate.md) version `2023.2` or later.
 
-As LSP became available in the 2023.2 EAP7 of IntelliJ-based IDEs, the plugin must target [](idea_ultimate.md) version `2023.2` or later.
+### Gradle Build Script
 
-Example <path>build.gradle.kts</path> configuration:
+<tabs>
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+Relevant <path>build.gradle.kts</path> configuration:
+
+```kotlin
+plugins {
+  id("org.jetbrains.intellij.platform") version "%intellij-platform-gradle-plugin-version%"
+}
+
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaUltimate("%ijPlatform%")
+  }
+}
+```
+
+</tab>
+
+<tab title="Gradle IntelliJ Plugin (1.x)">
+
+Upgrade the Gradle IntelliJ Plugin to the latest version.
+It will attach the LSP API sources and code documentation to the project.
+
+Relevant <path>build.gradle.kts</path> configuration:
 
 ```kotlin
 plugins {
@@ -40,27 +75,31 @@ intellij {
 }
 ```
 
-For projects based on the [](plugin_github_template.md), update the Gradle IntelliJ Plugin to the latest version, and amend the <path>gradle.properties</path> file as follows:
+For projects based on the [](plugin_github_template.md), update the Gradle IntelliJ Plugin to the latest version,
+and amend the values in <path>gradle.properties</path> accordingly.
 
-```
-platformType = IU
-platformVersion = %ijPlatform%
-```
+</tab>
+</tabs>
 
-The <path>plugin.xml</path> configuration file needs to specify the dependency on the IntelliJ IDEA Ultimate module:
+### plugin.xml
+
+The <path>plugin.xml</path> configuration file must specify the dependency on the IntelliJ IDEA Ultimate module:
 
 ```xml
+
 <idea-plugin>
-   <!-- ... -->
-   <depends>com.intellij.modules.ultimate</depends>
+  <!-- ... -->
+  <depends>com.intellij.modules.ultimate</depends>
 </idea-plugin>
 ```
 
-The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>[IDE]/lib/src/src_lsp-openapi.zip</path> archive.
+### IDE Setup
+
+The LSP API sources are bundled in IntelliJ IDEA Ultimate and can be found within the <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> archive.
 
 > Due to technical limitations in IDEs before 2024.1, it is necessary to manually attach sources to the IntelliJ IDEA Ultimate dependency.
 > To do so, when reviewing the compiled class which belongs to the LSP API, run the _Choose Sources..._ action, and point to the
-> <path>[IDE]/lib/src/src_lsp-openapi.zip</path> file.
+> <path>\$IDEA_INSTALLATION\$/lib/src/src_lsp-openapi.zip</path> file.
 >
 {style="note" title="Attaching Sources in IDE before 2024.1"}
 
@@ -116,7 +155,9 @@ private class FooLspServerDescriptor(project: Project) : ProjectWideLspServerDes
 
 ### Status Bar Integration
 
-Since 2024.1, a dedicated <control>Language Services</control> status bar widget is available to monitor the status of all LSP servers.
+<primary-label ref="2024.1"/>
+
+A dedicated <control>Language Services</control> status bar widget is available to monitor the status of all LSP servers.
 Override `LspServerSupportProvider.createLspServerWidgetItem()` to provide a custom icon and link to [Settings](settings.md) page (if available).
 
 ```kotlin

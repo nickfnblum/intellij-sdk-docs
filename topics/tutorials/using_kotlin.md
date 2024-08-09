@@ -86,18 +86,18 @@ For detailed instructions, please refer to the [Kotlin documentation](https://ko
 
 Adding Kotlin source files compilation support to the Gradle-based project requires adding and configuring the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%/kotlin_demo) sample plugin:
+See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples-master%/kotlin_demo) sample plugin using [](tools_gradle_intellij_plugin.md):
 
 ```kotlin
 ```
 
-{src="kotlin_demo/build.gradle.kts" include-lines="2-"}
+{src="kotlin_demo/build.gradle.kts" include-lines="2-" default-state="collapsed" collapsible="true" collapsed-title="build.gradle.kts"}
 
 ### Kotlin Standard Library (stdlib)
 {id="kotlin-standard-library"}
 
 Since Kotlin 1.4, a dependency on the standard library _stdlib_ is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
-In nearly all cases, it is not necessary to include it in the plugin distribution as the platform already bundles it.
+In nearly all cases, it is _not necessary_ to include it in the plugin distribution as the platform already bundles it.
 
 To opt out, add this line in <path>gradle.properties</path>:
 
@@ -105,45 +105,55 @@ To opt out, add this line in <path>gradle.properties</path>:
 kotlin.stdlib.default.dependency = false
 ```
 
-The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) task.
-If the property is not present, a warning will be reported during the plugin configuration verification,
-as it is a common problem when Kotlin _stdlib_ gets bundled within the plugin archive.
+#### Gradle check
+
+The presence of this Gradle property is checked with the corresponding Gradle task:
+
+<tabs>
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+[`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task
+
+</tab>
+<tab title="Gradle IntelliJ Plugin (1.x)">
+
+[`verifyPluginConfiguration`](tools_gradle_intellij_plugin.md#tasks-verifypluginconfiguration) task
+
+</tab>
+</tabs>
+
+If the property is not present, a warning will be reported during the plugin configuration verification.
 To bundle _stdlib_ in the plugin distribution, specify explicitly `kotlin.stdlib.default.dependency = true`.
 
-If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version
+#### stdlib – Miscellaneous
+
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled _stdlib_ version (see table below)
 or the specific version must be [provided in plugin distribution](plugin_content.md#plugin-with-dependencies).
-
-| IntelliJ Platform version | Bundled _stdlib_ version |
-|---------------------------|--------------------------|
-| 2024.2                    | 1.9.24                   |
-| 2024.1                    | 1.9.22                   |
-| 2023.3                    | 1.9.10                   |
-| 2023.2                    | 1.8.20                   |
-| 2023.1                    | 1.8.0                    |
-
-#### Earlier Versions
-{collapsible="true"}
-
-| IntelliJ Platform version | Bundled _stdlib_ version |
-|---------------------------|--------------------------|
-| 2022.3                    | 1.7.0                    |
-| 2022.2                    | 1.6.21                   |
-| 2022.1                    | 1.6.20                   |
-| 2021.3                    | 1.5.10                   |
-| 2021.2                    | 1.5.10                   |
-| 2021.1                    | 1.4.32                   |
-| 2020.3                    | 1.4.0                    |
-| 2020.2                    | 1.3.70                   |
-| 2020.1                    | 1.3.70                   |
-| 2019.3                    | 1.3.31                   |
-| 2019.2                    | 1.3.3                    |
-| 2019.1                    | 1.3.11                   |
 
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
 
 > If you need to add the Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
 {title="Adding stdlib in tests"}
+
+| IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
+|-------------------------------------------|--------------------------|
+| 2024.2                                    | 1.9.24                   |
+| 2024.1                                    | 1.9.22                   |
+| 2023.3                                    | 1.9.21                   |
+| 2023.2                                    | 1.8.20                   |
+| 2023.1                                    | 1.8.0                    |
+
+#### Earlier Versions
+{collapsible="true"}
+
+| IntelliJ Platform version (latest update) | Bundled _stdlib_ version |
+|-------------------------------------------|--------------------------|
+| 2022.3                                    | 1.7.22                   |
+| 2022.2                                    | 1.6.21                   |
+| 2022.1                                    | 1.6.10                   |
+
+See [here](https://www.jetbrains.com/legal/third-party-software/) for earlier versions.
 
 ### Kotlin Coroutines Libraries (kotlinx.coroutines)
 {id="coroutinesLibraries"}

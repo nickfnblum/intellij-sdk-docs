@@ -4,102 +4,37 @@
 
 <link-summary>Creating consistent and usable user interfaces.</link-summary>
 
-When working on an IntelliJ Platform-based IDE or a plugin, use these guidelines to create consistent and usable user interfaces.
-
-> Topics in <format color="Gray">gray text</format> are not available yet.
->
-{style="note"}
-
-## Controls
-
-- [](button.topic)
-    - [](built_in_button.md)
-    - [](split_button.md)
-- [](checkbox.md)
-- [](combo_box.md)
-- [](context_help.md)
-    - [](inline_help_text.md)
-    - [](tooltip.md)
-    - [](empty_state.md)
-- [](description_text.md)
-- [](drop_down.md)
-- [](got_it_tooltip.md)
-- [](group_header.md)
-- [](input_field.md)
-- [](link.md)
-- <format color="Gray">List</format>
-- <format color="Gray">Menu</format>
-    - <format color="Gray">Context Menu</format>
-    - <format color="Gray">Menu List</format>
-- [](notification_types.md)
-    - <format color="Gray">Alert</format>
-    - [](balloon.md)
-    - [](banner.md)
-    - <format color="Gray">Tool Window Balloon</format>
-- [](progress_indicators.md)
-    - [](loader.md)
-    - [](progress_bar.md)
-    - [](progress_text.md)
-- [](radio_button.md)
-- [](scrollbar.md)
-- [](search_field.md)
-- <format color="Gray">Slider</format>
-- [](table.md)
-- [](tabs.md)
-- [](text_area.md)
-- [](toggle_button.md)
-- [](toolbar.md)
-    - [](icon_button.md)
-    - [](split_icon_button.md)
-    - [](toolbar_drop_down.md)
-- <format color="Gray">Tree</format>
-- {columns="4"}
-
-## Components
-
-- <format color="Gray">Dialog Window</format>
-- <format color="Gray">Popup</format>
-- <format color="Gray">Status Bar</format>
-- [](tool_window.md)
-- {columns="4"}
-
-## Text
-
-- [](capitalization.md)
-- [](inspections.md)
-- [](punctuation.md)
-- <format color="Gray">Notification and Error Texts</format>
-- <format color="Gray">Terminology</format>
-- [](writing_short.md)
-- {columns="4"}
-
-## Principles
-
-- <format color="Gray">Accessibility</format>
-- <format color="Gray">Dangerous Actions</format>
-- [](data_formats.md)
-- <format color="Gray">Default Values</format>
-- <format color="Gray">Discoverability</format>
-- [](icons_style.md)
-- [](layout.md)
-    - [](groups_of_controls.md)
-    - <format color="Gray">Master-detail Layout</format>
-    - <format color="Gray">Sizes and Insets</format>
-- [](mnemonics.md)
-- [](platform_theme_colors.md)
-- <format color="Gray">Search</format>
-    - <format color="Gray">Search Results</format>
-    - <format color="Gray">Speed Search</format>
-- <format color="Gray">Sharing Settings</format>
-- [](typography.md)
-- <format color="Gray">UI Feedback</format>
-- [](validation_errors.md)
-- {columns="4"}
-
-## Resources
-
-- [Icons List](https://intellij-icons.jetbrains.design)
-- [](UI_kit.md)
-- {columns="4"}
-
-<include from="snippets.md" element-id="missingContent"/>
+<section-starting-page>
+        <title>UI Guidelines</title>
+        <description>
+            Use these guidelines to create consistent and usable user interfaces for When working on an IntelliJ IDEs or plugins.
+        </description>
+        <spotlight>
+            <a type="tools" summary="Learn how to use standard IntelliJ components" href="Components.topic">Components</a>
+            <a type="computer" href="layout.md" summary="Learn how to arrange UI components">Layout</a>
+        </spotlight>
+        <!--    Add several topics that are less important or are relevant only for advanced/experienced users.    -->
+        <primary>
+            <title>Principles</title>
+            <a href="icons_style.md" summary="How to create and customize icons"/>
+            <a href="typography.md" summary="IntelliJ font system">Typography</a>
+            <a href="platform_theme_colors.md" summary="Platform theme colors">Colors</a>
+            <a href="mnemonics.md" summary="Characters that indicate keys for menu actions">Mnemonics</a>
+            <a href="validation_errors.md" summary="Highlight invalid input">Validation errors</a>
+        </primary>
+        <secondary>
+            <title>Resources</title>
+            <a href="https://intellij-icons.jetbrains.design" summary="Full IntelliJ icons set">Icons List</a>
+            <a href="https://www.figma.com/community/file/938505862996154830" summary="UI Kit in Figma ">UI Kit</a>
+        </secondary>
+        <!--    Optionally add additional cards and links to topics that are not in this section but may be relevant.    -->
+        <misc>
+            <cards>
+                <title>Writing UI texts</title>
+                <a href="capitalization.md" summary="Capitalization rules"/>
+                <a href="inspections.md" summary="Inspection descriptions"/>
+                <a href="punctuation.md" summary="Punctuation rules"></a>
+                <a href="writing_short.md" summary="How to write short and clear">General guidelines</a>
+            </cards>
+        </misc>
+    </section-starting-page>

@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Dispatchers
+<primary-label ref="2024.1"/>
 
 <link-summary>Explanation of coroutine dispatcher in the IntelliJ Platform.</link-summary>
 
@@ -57,7 +58,7 @@ suspend fun readDataFromFile(): Data {
 ## EDT Dispatcher
 
 The [`Dispatchers.EDT`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt) dispatcher is used for executing UI actions on the Swing Event Dispatch Thread.
-`Dispatchers.EDT` dispatches onto EDT within the context [modality state](general_threading_rules.md#modality-and-invokelater).
+`Dispatchers.EDT` dispatches onto EDT within the context [modality state](threading_model.md#invoking-operations-on-edt-and-modality).
 
 ### `Dispatchers.Main` vs. `Dispatchers.EDT`
 

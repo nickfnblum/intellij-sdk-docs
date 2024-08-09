@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 #  Embedded Browser (JCEF)
+<primary-label ref="2020.2"/>
 
 <link-summary>Embedding Chromium-based browser in IDE.</link-summary>
 
@@ -101,7 +102,7 @@ myPanel.add(browser.getComponent());
 #### Loading Documents
 
 To load a document in the browser, use one of [`JBCefBrowserBase.load*()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowserBase.java) methods.
-Methods loading documents can be called from both EDT and background threads.
+Methods loading documents can be called from both [EDT and background threads](threading_model.md).
 It is possible to set an initial URL (passed to constructor or builder) that will be loaded when browser is created and initialized.
 
 ### Browser Client

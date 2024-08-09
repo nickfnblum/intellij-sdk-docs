@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Execution Contexts
+<primary-label ref="2024.1"/>
 
 <link-summary>Tracking execution progress, checking for cancellations, and switching between different execution contexts.</link-summary>
 
@@ -94,7 +95,7 @@ Code executed via the Progress API
 ([`ProgressManager`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java),
 [`ProgressIndicator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java), etc.)
 is executed in a progress indicator context.
-See the [running background processes](general_threading_rules.md#background-processes-and-processcanceledexception) section for details.
+See the [](background_processes.md#progress-api) section for details.
 
 > Executing code under progress indicator is obsolete since 2024.1.
 > It is advised to use Kotlin coroutines in new code.
@@ -107,7 +108,7 @@ See the [running background processes](general_threading_rules.md#background-pro
 ### Cancellation Check
 {#progress-indicator-cancellation-check}
 
-- `ProgressManager.checkCanceled()` - as described in the [](general_threading_rules.md#background-processes-and-processcanceledexception) section
+- `ProgressManager.checkCanceled()` - as described in the [](background_processes.md#cancellation) section
 
 ### Progress Reporting
 {#progress-indicator-progress-reporting}

@@ -1,10 +1,8 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Migrating from Gradle IntelliJ Plugin
+# Migrating from Gradle IntelliJ Plugin (1.x)
 
-<link-summary>IntelliJ Platform Gradle Plugin 2.x migration guide from Gradle IntelliJ Plugin 1.x</link-summary>
-
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
+<link-summary>IntelliJ Platform Gradle Plugin (2.x) migration guide from Gradle IntelliJ Plugin (1.x)</link-summary>
 
 ## Plugin Name Change
 
@@ -110,7 +108,9 @@ dependencies {
 }
 ```
 
-See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+See:
+- [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+- [](tools_intellij_platform_gradle_plugin_faq.md#migrateToPluginId)
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
@@ -163,17 +163,39 @@ Access the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#Produc
 
 ### `downloadRobotServerPlugin`
 
-The Robot Server Plugin integration is not yet available. See [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+The Robot Server Plugin can now be downloaded using `plugins { robotServerPlugin() }` dependency helper when declaring a custom task.
+
 
 ### `runIdeForUiTests`
 
-Use [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+The `runIdeForUiTests` task is obsolete and should be replaced with an explicit declaration.
+
+The task running IDE with the Robot Server Plugin should be declared now as a custom `runIde` task with plugin loaded:
+
+```kotlin
+val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
+  task {
+    jvmArgumentProviders += CommandLineArgumentProvider {
+      listOf(
+        "-Drobot-server.port=8082",
+        "-Dide.mac.message.dialogs.as.sheets=false",
+        "-Djb.privacy.policy.text=<!--999.999-->",
+        "-Djb.consents.confirmation.enabled=false",
+      )
+    }
+  }
+
+  plugins {
+    robotServerPlugin()
+  }
+}
+```
 
 ### `runPluginVerifier`
 
 The task for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
 
-Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin) extension to configure it.
+Use [`intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification) extension to configure it.
 
 ### `setupDependencies`
 

@@ -37,8 +37,9 @@ Some modules are available in all products, and some modules are available only 
 This section identifies and discusses modules of both types.
 
 ### Declaring Incompatibility with Module
+<primary-label ref="2020.2"/>
 
-Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying [`<incompatible-with>`](plugin_configuration_file.md#idea-plugin__incompatible-with) containing module ID in its <path>plugin.xml</path>.
+A plugin can declare incompatibility with an arbitrary module by specifying [`<incompatible-with>`](plugin_configuration_file.md#idea-plugin__incompatible-with) containing module ID in its <path>plugin.xml</path>.
 
 ### Modules Available in All Products
 
@@ -102,6 +103,7 @@ This refactoring separated the Java implementation from the other, non-language 
 A dependency on the Java plugin (Plugin ID `com.intellij.java`) must be setup using [](plugin_dependencies.md).
 
 #### AppCode/CLion
+<primary-label ref="2020.3"/>
 
 The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
 This refactoring extracted some functionalities into specific modules for easier maintainability and reuse between AppCode/CLion and other JetBrains IDEs.
@@ -207,8 +209,11 @@ Exploring the available packages and classes in a plugin or module utilizes feat
 If the project is not up-to-date, [reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
 Reimporting the project will automatically update the dependencies.
 
-In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
-Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) tags in <path>plugin.xml</path> or the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) declaration in the Gradle build script.
+In the <control>Project</control> tool window, select <control>Project</control> View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
+Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the [`<depends>`](plugin_configuration_file.md#idea-plugin__depends)
+tags in <path>plugin.xml</path> or the plugin dependency declarations in the Gradle build script
+(2.x: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins), 1.x: [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins)).
+
 The image below shows the External Libraries for the example plugin project configuration explained in [Configuring Gradle build script](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
 
 ![Example PhpStorm Project Libraries](php_prj_libs.png){width="700"}
