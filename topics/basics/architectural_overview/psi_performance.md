@@ -4,7 +4,7 @@
 
 <link-summary>Performance tips on working with PSI.</link-summary>
 
-See also [](general_threading_rules.md#avoiding-ui-freezes) and [](indexing_and_psi_stubs.md#improving-indexing-performance).
+See also [](threading_model.md#avoiding-ui-freezes) and [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 > [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
 
@@ -47,7 +47,9 @@ If the information you cache depends only on a subtree of the current PSI elemen
 ### Using `ProjectRootManager` as Dependency
 {id="projectRootManagerDependency"}
 
-Since 2024.1, the platform no longer increments root changes modification tracker on finish of [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
+<primary-label ref="2024.1"/>
+
+The platform no longer increments root changes modification tracker on finish of [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
 If cached values use [`ProjectRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) as dependency
 (without [`PsiModificationTracker`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java))
 and at the same time depend on [indexes](indexing_and_psi_stubs.md), a dependency on

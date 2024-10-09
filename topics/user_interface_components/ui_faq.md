@@ -6,7 +6,7 @@
 
 <include from="user_interface_components.md" element-id="inspectingExistingUI"/>
 
-## Useful classes
+## Useful Classes
 
 - Package [`com.intellij.ui`](%gh-ic%/platform/util/ui/src/com/intellij/ui/)
 - Package [`com.intellij.util.ui`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/)
@@ -46,13 +46,13 @@ Use [`NaturalComparator`](%gh-ic%/platform/util/base/src/com/intellij/openapi/ut
 - `formatFileSize()` to format filesize: _1.23 KB_
 - `escapeLineBreak()` and related methods to escape special characters
 - `shortenTextWithEllipsis()` and `shortenPathWithEllipsis()` to produce abbreviated UI texts ending with '&#8230;'
-- `quote()` and `unquoteString()` to wrap values: _Usages of "$value$": 218 found_
+- `quote()` and `unquoteString()` to wrap values: _Usages of "\$value\$": 218 found_
 
 See [](internationalization.md) for information about internationalizing plugins.
 
 See [`NlsMessages`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/nls/NlsMessages.java) to produce localized messages.
 
-## "Recently Used" entries
+## "Recently Used" Entries
 
 To store and retrieve values for *Recently Used* entries (e.g., filter values), use
 [`RecentsManager`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/RecentsManager.java).

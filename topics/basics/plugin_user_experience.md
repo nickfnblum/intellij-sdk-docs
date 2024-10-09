@@ -51,7 +51,7 @@ To reproduce and understand problems in production, use [logging](ide_infrastruc
 
 Even if a plugin works correctly and looks pleasing, poor performance will impact user satisfaction.
 Slow highlighting, code completion, code generation, and other features may break the user's workflow and cause frustration leading to plugin uninstallation.
-Always try to follow the performance tips described on the relevant topic pages, e.g., [](psi_performance.md), [](general_threading_rules.md#avoiding-ui-freezes), [](indexing_and_psi_stubs.md#improving-indexing-performance).
+Always try to follow the performance tips described on the relevant topic pages, e.g., [](psi_performance.md), [](threading_model.md#avoiding-ui-freezes), [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 Making as much functionality as possible working during [dumb mode](indexing_and_psi_stubs.md#dumb-mode) can also improve perceived performance.
 
@@ -59,11 +59,13 @@ Making as much functionality as possible working during [dumb mode](indexing_and
 
 In addition to the plugin execution performance, it is recommended to optimize the size of the plugin distribution that is downloaded by users from JetBrains Marketplace.
 Users with a poor internet connection may cancel the download when they realize that it will take too long to wait for a plugin they are not sure will meet their expectations.
+
 Consider the following techniques for optimizing the plugin distribution size:
 
 * Decrease the number of dependencies. Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) you need and reuse them.
+* Make sure no unneeded or multiple versions of the same dependencies are packaged in the plugin distribution.
 * Optimize assets like icons, images, videos, etc.
-* If large resources (e.g., SDKs) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
+* If large resources (e.g., SDKs, reference documentation) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
 
 [Obfuscation](https://plugins.jetbrains.com/docs/marketplace/obfuscate-the-plugin.html) may also help reduce the distribution file size.
 
@@ -77,7 +79,7 @@ If you implement [custom language support](custom_language_support.md), review a
 ## Consistent and Good-Looking UI
 
 If a plugin UI significantly differs from the other application parts, it can feel alien to people and might be considered low quality or neglected.
-Review and follow the rules described in the [](ui_guidelines_welcome.md).
+Review and follow the rules described in the [](ui_guidelines_welcome.topic).
 Pay attention to [icons](icons_style.md) and make them match the IDE style.
 Use the UI controls recommended for a given use case.
 Use [UI Inspector](internal_ui_inspector.md) to see how the existing UI is implemented.
@@ -85,7 +87,7 @@ Use [UI Inspector](internal_ui_inspector.md) to see how the existing UI is imple
 ## High-Quality Texts
 
 Bad-quality labels or texts with typos and grammatical errors make a bad impression.
-All the UI texts should follow the rules described in the _Text_ section of the [](ui_guidelines_welcome.md).
+All the UI texts should follow the rules described in the _Text_ section of the [](ui_guidelines_welcome.topic).
 It is recommended to proofread the texts or use one of the [spellcheck plugins](https://plugins.jetbrains.com/search?tags=Spellcheck).
 
 ## Plugin Description and Presentation

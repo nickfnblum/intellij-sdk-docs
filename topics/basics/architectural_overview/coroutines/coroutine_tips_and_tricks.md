@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Tips and Tricks
+<primary-label ref="2024.1"/>
 
 <link-summary id="link-summary">Tips and tricks to use coroutines efficiently.</link-summary>
 
@@ -144,7 +145,7 @@ suspend fun doSomething() {
 
 ## Changing Modality State
 
-Avoid [changing modality state](general_threading_rules.md#modality-and-invokelater) in the middle of a running coroutine:
+Avoid [changing modality state](threading_model.md#invoking-operations-on-edt-and-modality) in the middle of a running coroutine:
 
 ```kotlin
 cs.launch {

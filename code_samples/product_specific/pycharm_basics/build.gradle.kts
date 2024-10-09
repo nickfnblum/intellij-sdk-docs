@@ -2,7 +2,7 @@
 
 plugins {
   id("java")
-  id("org.jetbrains.intellij") version "1.17.3"
+  id("org.jetbrains.intellij") version "1.17.4"
 }
 
 group = "com.intellij.sdk"
@@ -18,7 +18,7 @@ java {
 
 // See https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-  version.set("2023.1.4")
+  version.set("2023.3.6")
   type.set("PY")
   plugins.set(listOf("Pythonid"))
   downloadSources.set(false)
@@ -31,7 +31,7 @@ tasks {
 
   patchPluginXml {
     version.set("${project.version}")
-    sinceBuild.set("232")
-    untilBuild.set("241.*")
+    sinceBuild.set("233")
+    untilBuild.set("242.*")
   }
 }

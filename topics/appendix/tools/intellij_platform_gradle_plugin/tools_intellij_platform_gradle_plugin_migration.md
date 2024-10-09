@@ -1,15 +1,14 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Migrating from Gradle IntelliJ Plugin
+# Migrating from Gradle IntelliJ Plugin (1.x)
 
-<link-summary>IntelliJ Platform Gradle Plugin 2.x migration guide from Gradle IntelliJ Plugin 1.x</link-summary>
-
-<include from="tools_intellij_platform_gradle_plugin.md" element-id="Beta_Status"/>
+<link-summary>IntelliJ Platform Gradle Plugin (2.x) migration guide from Gradle IntelliJ Plugin (1.x)</link-summary>
 
 ## Plugin Name Change
 
 As the **2.x** branch brings significant breaking changes to the plugin, the name was changed from _Gradle IntelliJ Plugin_ to
 _IntelliJ Platform Gradle Plugin_ as the old one was confused with the bundled Gradle support plugin in the IDE.
+
 The plugin is published to the Gradle Plugin Portal with a new name as a new entry, and the old one is marked as deprecated.
 
 ## Minimum Gradle and Java Versions
@@ -110,7 +109,9 @@ dependencies {
 }
 ```
 
-See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+See:
+- [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins)
+- [](tools_intellij_platform_gradle_plugin_faq.md#migrateToPluginId)
 
 <include from="tools_intellij_platform_gradle_plugin_repositories_extension.md" element-id="localPlatformArtifacts_required"/>
 
@@ -139,7 +140,7 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-t
 
 ### `intellij.updateSinceUntilBuild`, `intellij.sameSinceUntilBuild`
 
-The <path>plugin.xml</path> file is now fully managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
+The since/until properties in the <path>plugin.xml</path> file are now managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
 
 ### `intellij.intellijRepository`,` intellij.pluginsRepositories`, `intellij.jreRepository`
 
@@ -153,7 +154,7 @@ See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
 
 ### `intellij.downloadSources`
 
-Downloading sources is managed by the Plugin DevKit plugin in version 2024.1+.
+Downloading sources is managed by the _Plugin DevKit_ plugin in version 2024.1+.
 
 ### `intellij.ideaDependency`
 
@@ -161,19 +162,74 @@ Access the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#Produc
 
 ## Tasks
 
+### Running Tests
+
+An [explicit dependency](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing) on a test framework is now required.
+
 ### `downloadRobotServerPlugin`
 
-The Robot Server Plugin integration is not yet available. See [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+The Robot Server Plugin can now be downloaded using `plugins { robotServerPlugin() }` dependency helper when declaring a custom task.
+
 
 ### `runIdeForUiTests`
 
-Use [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+The `runIdeForUiTests` task is obsolete and should be replaced with an explicit declaration.
+
+The task running IDE with the Robot Server Plugin should be declared now as a custom `runIde` task with plugin loaded:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
+  task {
+    jvmArgumentProviders += CommandLineArgumentProvider {
+      listOf(
+        "-Drobot-server.port=8082",
+        "-Dide.mac.message.dialogs.as.sheets=false",
+        "-Djb.privacy.policy.text=<!--999.999-->",
+        "-Djb.consents.confirmation.enabled=false",
+      )
+    }
+  }
+
+  plugins {
+    robotServerPlugin()
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+val runIdeForUiTests by intellijPlatformTesting.runIde.registering {
+  task {
+    jvmArgumentProviders.add({
+      [
+        '-Drobot-server.port=8082',
+        '-Dide.mac.message.dialogs.as.sheets=false',
+        '-Djb.privacy.policy.text=<!--999.999-->',
+        '-Djb.consents.confirmation.enabled=false',
+      ]
+    } as CommandLineArgumentProvider)
+  }
+
+  plugins {
+    robotServerPlugin()
+  }
+}
+```
+
+</tab>
+</tabs>
+
 
 ### `runPluginVerifier`
 
 The task for running the IntelliJ Plugin Verifier is now called [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin).
 
-Use [`intellijPlatform.verifyPlugin`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-verifyPlugin) extension to configure it.
+Use [`intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification) extension to configure it.
 
 ### `setupDependencies`
 
@@ -207,8 +263,23 @@ Alternatively, edit the <path>.idea/workspace.xml</path> file and remove the `se
 
 Add an explicit dependency on [the plugin](https://github.com/JetBrains/gradle-idea-ext-plugin) in <path>build.gradle.kts</path>:
 
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
 ```kotlin
 plugins {
-  id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.8"
+  id("org.jetbrains.gradle.plugin.idea-ext") version "1.1.9"
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+plugins {
+  id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.9'
+}
+```
+
+</tab>
+</tabs>

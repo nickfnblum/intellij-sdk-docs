@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Logo
 
@@ -6,6 +6,11 @@
 
 Beginning in version 2019.1, the IntelliJ Platform supports representing a plugin with a logo.
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
+
+When opening <path>plugin.xml</path> in editor, inspection
+<control>Plugin DevKit | Plugin descriptor | Plugin Logo check</control> (2024.3+,
+for earlier versions <control>Plugin DevKit | Plugin descriptor | Plugin.xml validity</control>)
+will highlight a missing plugin icon.
 
 **Note:** icons and images used within a plugin have different requirements.
 See [](icons.md) for more information.
@@ -77,7 +82,7 @@ If one Plugin Logo design does not work on both light and dark backgrounds, crea
 The examples below illustrate how a Plugin Logo design may work well for a light background but not for a dark background.
 Consequently, a separate Plugin Logo for dark backgrounds is needed.
 
-| ![Plugin Logo on Light Theme](light_version.png){width="225"} |     ![Light Plugin Logo on Dark Theme](dark_bad.png){width="225"}     |     ![Plugin Logo for Dark Theme](dark_good.png){width="225"}     |
+| ![Plugin Logo on Light Theme](light_version.png){width="225"} |     ![Light Plugin Logo on Dark Theme](dark_bad.png){width="225"}     |     ![Plugin Logo for Dark Theme](dark_good.png){width="225"}      |
 |:-------------------------------------------------------------:|:---------------------------------------------------------------------:|:------------------------------------------------------------------:|
 | _The light Plugin Logo design<br/>works well on light theme_  | _The light Plugin Logo design does<br/>not work well on a dark theme_ | _A separate, dark Plugin Logo design<br/>works well on dark theme_ |
 {style="none"}
@@ -97,9 +102,9 @@ Name the Plugin Logo files according to the following conventions:
 * <path>pluginIcon_dark.svg</path> is an optional, alternative Plugin Logo for use solely with dark IDE themes.
 
 ## Adding Plugin Logo Files to a Plugin Project
-The Plugin Logo files must be in the <path>META-INF</path> folder of the plugin distribution file, i.e., the <path>plugin.jar</path> or <path>plugin.zip</path> file you upload to the plugin repository and install into an IDE.
+The Plugin Logo files must be packaged in the <path>META-INF</path> folder of the [plugin main JAR file](plugin_content.md).
 
-To include Plugin Logo files in your distribution file, place the Plugin Logo files into a plugin project's <path>resources/META-INF</path> folder.
+To include Plugin Logo files, place them into the plugin project's <path>resources/META-INF</path> folder.
 For example:
 
 ![Plugin Logo Files in META-INF folder](resource_directory_structure.png){width="450"}

@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-# Gradle IntelliJ Plugin
+# Gradle IntelliJ Plugin (1.x)
 
 <tldr>
 
@@ -13,6 +13,11 @@
 <link-summary>Gradle IntelliJ Plugin configures Gradle-based plugin projects for building, testing, verifying, and publishing the plugin.</link-summary>
 
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configure your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
+
+> This plugin is no longer under active development.
+> Whenever possible, use [](tools_intellij_platform_gradle_plugin.md) instead.
+>
+{title="Obsolescence Notice" style="note"}
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
@@ -27,11 +32,6 @@ The plugin provides functionalities like:
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
 > Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
 >
-
-> [](tools_intellij_platform_gradle_plugin.md) (currently in Early Access Preview) is going to replace this plugin in the future.
-> Please note that production usage is currently not recommended yet.
->
-{style="note"}
 
 ## Usage
 
@@ -85,7 +85,7 @@ To attach IntelliJ Platform sources in the IDE when enabled via [](#intellij-ext
 
 <tabs>
 
-<tab title="2023.3">
+<tab title="2023.3+">
 
 In <ui-path>Settings | Advanced Settings</ui-path> enable option <control>Download sources</control> in section <ui-path>Build Tools. Gradle</ui-path>.
 Then invoke <control>Reload All Gradle Projects</control> action from the <control>Gradle</control> tool window.
@@ -185,7 +185,7 @@ org.gradle.unsafe.configuration-cache = true
 See [Using the configuration cache](https://docs.gradle.org/current/userguide/configuration_cache.html#config_cache:usage) in the Gradle documentation for more details.
 
 
-### Multi-module Project
+### Multi-Module Project
 Sometimes, you may want to split your plugin into multiple modules — i.e., to separate the core plugin code from the code related to other third-party plugin dependencies.
 The most common way to do this is to use the [Gradle Multi-Project Build](https://docs.gradle.org/current/userguide/multi_project_builds.html) feature.
 
@@ -599,9 +599,7 @@ Assembles a plugin and prepares ZIP archive for [deployment](publishing_plugin.m
 
 `buildPlugin` task extends the [`Zip`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Zip.html) Gradle task.
 
-> Do not repackage libraries into the main plugin archive, see [](plugin_content.md#plugin-with-dependencies).
->
-{style="warning"}
+<include from="plugin_content.md" element-id="doNotRepackageLibraries"/>
 
 #### `archiveBaseName`
 {#tasks-buildplugin-archivebasename}

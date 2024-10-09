@@ -27,8 +27,7 @@ Use [Icons list](https://intellij-icons.jetbrains.design) to browse existing ico
 Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java).
 Icons from plugins are located in the corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/gen/org/jetbrains/plugins/github/GithubIcons.java)).
 
-If custom icons are required, please refer to detailed [design guide](icons_style.md).
-To generate SVG icons suited for the IntelliJ-based IDEs, also consider third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+If custom icons are required, refer to detailed [design guide](icons_style.md).
 
 ## Organizing Icons
 
@@ -218,9 +217,8 @@ Register a resource bundle via `com.intellij.iconDescriptionBundle` extension po
 Create `icon.<icon-path>.tooltip` key in a resource bundle, where `<icon-path>` is the icon path with leading slash and `.svg` removed and slashes replaced with dots (e.g., `/nodes/class.svg` &rarr; `icon.nodes.class.tooltip`).
 
 ## New UI Icons
+<primary-label ref="2022.3"/>
 
-> This feature is available since 2022.3.
->
 > See [New UI Icons Guide](https://www.figma.com/community/file/1227729570033544559) for guidelines and overview.
 
 To fully support the [New UI](https://www.jetbrains.com/help/idea/new-ui.html), the plugin must provide additional dedicated icons and mapping information.
@@ -230,8 +228,8 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 1. Create a new <path>expui</path> directory in the icon root directory ([Reference](#organizing-icons)).
 2. Copy all icons for the New UI into this directory.
-3. Create an empty <path>$PluginName$IconMappings.json</path> mapping file in the resources root directory.
-4. Register <path>$PluginName$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
+3. Create an empty <path>\$PluginName\$IconMappings.json</path> mapping file in the resources root directory.
+4. Register <path>\$PluginName\$IconMappings.json</path> in <path>plugin.xml</path> via the `com.intellij.iconMapper` extension point.
 
 </procedure>
 
@@ -243,10 +241,10 @@ This allows supporting both UI variants at the same time, depending on what the 
 
 ### Mapping Entries
 
-All New UI icons must be mapped in the <path>$PluginName$IconMappings.json</path> mapping file.
+All New UI icons must be mapped in the <path>\$PluginName\$IconMappings.json</path> mapping file.
 
 For each New UI icon, add a mapping entry inside `expui` block.
-Each directory starts a new block containing all its entries (see linked `MavenIconMappins.json` sample from above).
+Each directory starts a new block containing all its entries (see linked `MavenIconMappings.json` sample from above).
 
 In this example, the icon root directory is named <path>icons</path>:
 ```json

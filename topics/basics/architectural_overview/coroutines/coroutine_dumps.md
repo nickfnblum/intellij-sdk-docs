@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Dumps
+<primary-label ref="2024.1"/>
 
 <link-summary>Explanation of coroutine dumps format.</link-summary>
 
@@ -71,7 +72,7 @@ A coroutine's `toString()`:
     - `DeferredCoroutine` and `LazyDeferredCoroutine` are created by [`async`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html).
     - `BlockingCoroutine` is created by [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt).
     - `ProducerCoroutine` is created by [`produce`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/produce.html).
-    - `ChildScope` is created by [`childScope`](%gh-ic%/platform/util/coroutines/src/coroutineScope.kt) or [`namedChildScope`](%gh-ic%/platform/util/coroutines/src/coroutineScope.kt).
+    - `ChildScope` is created by [`childScope`](%gh-ic%/platform/util/coroutines/src/coroutineScope.kt).
 - `JobState` - a coroutine `Job`'s state.
   Possible states and transition can be found in the [`Job`'s KDoc](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/).
 

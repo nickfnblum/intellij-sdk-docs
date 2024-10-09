@@ -6,14 +6,16 @@
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by the [`patchPluginXml`](tools_gradle_intellij_plugin.md#tasks-patchpluginxml) Gradle task, see [](configuring_plugin_project.md#patching-the-plugin-configuration-file).
+Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by the `patchPluginXml` Gradle task
+(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml)).
+See [](configuring_plugin_project.md#patching-the-plugin-configuration-file) for further details.
 
 ### Build Number Validity
 
 Please note the following regarding values:
 
 - Values must represent the [actual build numbers](#build-number-format).
-  Any made-up numbers must not be used and such plugins will be rejected on JetBrains Marketplace.
+  Any made-up numbers must not be used, and such plugins will be rejected on JetBrains Marketplace.
   For example, `233.*` is invalid for `since-build`; any of `999.*`, `234.*` (maximum is `233.*`) and `223.9999` are invalid for `until-build`.
 - Not specifying `until-build` means it will include _all_ future builds. This includes future, yet unreleased versions and possibly new IDEs, which might impact compatibility later.
 - To support all releases for a specific branch, use dot-star suffix (`.* `) in `until-build`.
@@ -23,7 +25,7 @@ Please note the following regarding values:
 > Any additional reported errors/warnings should also be fixed when possible.
 >
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
-> According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
+> According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), JetBrains will restrict incompatible plugin versions if necessary.
 >
 {title="Compatibility Enforcement" style="warning"}
 
@@ -38,11 +40,11 @@ It consists of the following parts:
 
 Branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/).
 The branch number takes the last two digits of the year and the `R` release number.
-For example, `231` for 20*23.1*, `232` for 20*23.2*, and `233` for 20*23.3*.
+For example, `231` for 20**23.1**, `232` for 20**23.2**, and `233` for 20**23.3**.
 
 The build number may have multiple components: `IU-162.94.11`, `IU-162.94.11.256.42`.
 This gives more flexibility for third-party plugins and IDE developers.
-Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify additional internal version (for example `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
+Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify an additional internal version (for example, `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
@@ -60,10 +62,10 @@ Usually you should omit the product ID and use only the branch number and build 
 ```
 </compare>
 
-> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
+> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example, [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 > For upcoming versions, see [Early Access Program](https://eap.jetbrains.com).
 >
-> See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
+> See also ["What versions of IntelliJ-based IDEs are supported?"](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >
 {style="note" title="Build numbers for products"}
 
@@ -80,6 +82,7 @@ In the case of supporting a range of platform versions with different underlying
 Consult [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md) for an overview of known breaking and relevant changes across IDE versions.
 
 In some cases, keeping a dedicated branch and corresponding plugin release for each major IDE version might be required due to incompatibilities that cannot be solved in other ways.
+The IDE will automatically install only the corresponding compatible build.
 
 ### Platform Versions
 {id="platformVersions"}
@@ -93,13 +96,13 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 242                                                             | 2024.2 **NOTE** Java 21 is now required                                                                                                  |
+| [242](https://github.com/JetBrains/intellij-community/tree/242) | 2024.2 **NOTE** Java 21 is now required                                                                                                  |
 | [241](https://github.com/JetBrains/intellij-community/tree/241) | 2024.1                                                                                                                                   |
 | [233](https://github.com/JetBrains/intellij-community/tree/233) | 2023.3                                                                                                                                   |
 | [232](https://github.com/JetBrains/intellij-community/tree/232) | 2023.2                                                                                                                                   |
 | [231](https://github.com/JetBrains/intellij-community/tree/231) | 2023.1                                                                                                                                   |
 
-#### Earlier versions
+#### Earlier Versions
 {collapsible="true"}
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |

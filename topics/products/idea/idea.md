@@ -13,14 +13,47 @@
 See [Choose your edition](https://www.jetbrains.com/idea/features/#choose-your-edition) and [Feature Comparison](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce) for a detailed comparison.
 </snippet>
 
-## Configuring Plugin Projects Targeting IntelliJ IDEA
+## IntelliJ IDEA Plugin Setup
 
-The configuration of IntelliJ IDEA plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute).
+{id="ideaPluginSetup"}
+
+### Gradle Build Script
+
+<tabs>
+<tab title="IntelliJ Platform Gradle Plugin (2.x)">
+
+Define a dependency using [`intellijIdeaCommunity()` or `intellijIdeaUltimate()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md), see _Versions_ link on top of this page for all available versions.
+See [](tools_intellij_platform_gradle_plugin.md#dependenciesLocalPlatform) for using a local installation.
+
+Minimum <path>build.gradle.kts</path> setup:
+
+```kotlin
+repositories {
+  mavenCentral()
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
+dependencies {
+  intellijPlatform {
+    intellijIdeaCommunity("<versionNumber>")
+  }
+}
+```
+
+</tab>
+<tab title="Gradle IntelliJ Plugin (1.x)">
+
+The configuration of IntelliJ IDEA plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                               |
 |----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | <p>`IC` for IntelliJ IDEA Community Edition (default)</p><p>`IU` for [](idea_ultimate.md)</p> |
 | [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | IDE version, e.g. `2022.2`                                                                    |
+
+</tab>
+</tabs>
 
 ## Available API
 

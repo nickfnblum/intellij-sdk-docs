@@ -54,8 +54,7 @@ Where the placeholders must be enclosed in code quotes (`name`):
 <property name> is a full name of a property from .properties file, like `some.action.description`
 <bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
 
-NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack.
-An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until supported, you may document the change as you prefer, and I will correct it later.
+NOTE: If a code change you're trying to document doesn't match any of the above patterns, please ask in #plugins-verifier
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
@@ -70,16 +69,123 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="snippets.md" element-id="gradlePluginVersion"/>
 
+## 2024.3
+
+### IntelliJ Platform 2024.3
+
+`com.intellij.psi.stubs.StubElement.getChildrenStubs()` method return type changed from `List<StubElement>` to `List<StubElement<?>>`
+: Raw-type changed to a properly parameterized type. This is binary compatible change but may cause compilation errors. In most of the cases, it's enough to add `<?>` at the use site to fix the issue.
+
+Unbundled JUnit library
+: Add an explicit dependency in the plugin project.
+
+`com.intellij.openapi.actionSystem.impl.MoreActionGroup(boolean, int, DefaultConstructorMarker)` constructor removed
+: Use other constructors instead.
+
+### JSON Plugin (new) 2024.3
+
+`com.intellij.json.JsonElementTypes` class removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.JsonFileType` class removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.JsonLanguage` class removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.JsonParserDefinition` class removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.JsonTokenType` class removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json` package removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.codeinsight` package removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.highlighting` package removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.intellij.json.psi` package removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
+`com.jetbrains.jsonSchema` package removed
+: Add [explicit dependency](plugin_dependencies.md) on the newly extracted JSON plugin (`com.intellij.modules.json`) in `plugin.xml`.
+
 ## 2024.2
 
 ### IntelliJ Platform 2024.2
 
+Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` argument.
+
+`com.intellij.execution.lineMarker.ExecutorAction.Companion.wrap(RunContextAction, Int)` method removed
+: Use `com.intellij.execution.lineMarker.ExecutorAction.Companion.wrap(AnAction, Executor, Int)` instead.
+
 `org.apache.sanselan.util` package removed
 : `org.apache.sanselan.util.IOUtils` compatibility shim is obsolete; instead, please use JRE methods or `org.apache.commons.io.IOUtils`.
 
+`com.intellij.platform.workspace.storage.url.VirtualFileUrlManager.getOrCreateFromUri(String)` method removed
+: Use `com.intellij.platform.workspace.storage.url.VirtualFileUrlManager.getOrCreateFromUrl(String)` instead.
+
+`com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyEntity(MutableEntityStorage, LibraryEntity, Function1)` method removed
+: Use `com.intellij.platform.workspace.jps.entities.DependenciesKt.modifyLibraryEntity(MutableEntityStorage, LibraryEntity, Function1)` instead.
+
+### UML Plugin 2024.2
+
+`com.intellij.uml.UmlGraphBuilder(Project, Graph2D, Graph2DView, DiagramDataModel<?>, DiagramPresentationModel)` constructor removed
+: Use `com.intellij.uml.UmlGraphBuilder(Project, Graph2D, Graph2DView, DiagramDataModel<?>, GraphThreadingType, DiagramPresentationModel)` instead.
+
+`com.intellij.openapi.graph.impl.builder.GraphBuilderImpl.addEdge(Object, Object, Object)` method removed
+: Use `com.intellij.openapi.graph.impl.builder.GraphBuilderImpl.addEdge(Object, Object, String, Object, Object[], Function<? super E,? extends Edge>)` instead.
+
 ### Python Plugin 2024.2
+
 `com.jetbrains.python.PyElementTypes.STATEMENT_LIST` field type changed from `PyElementType` to `IElementType`
-: Update code usages. 
+: Update code usages.
+
+### Kotlin Plugin 2024.2
+
+`org.jetbrains.kotlin.analysis.low.level.api.fir.LLFirResolveSessionService.getFirResolveSessionNoCaching(module: KtModule)` method removed
+: Internals of Kotlin plugin.
+
+`org.jetbrains.kotlin.analysis.project.structure.ProjectStructureProvider.Companion.getModule(Project, PsiElement, KtModule)` method removed
+: Use `org.jetbrains.kotlin.analysis.api.projectStructure.KaModuleProvider.Companion.getModule(Project, PsiElement, KtModule)` instead.
+
+`org.jetbrains.kotlin.codegen.state.TypeMappingUtil.getJVM_SUPPRESS_WILDCARDS_ANNOTATION_FQ_NAME` method removed
+: Use `org.jetbrains.kotlin.name.JvmStandardClassIds.getJVM_SUPPRESS_WILDCARDS_ANNOTATION_FQ_NAME` instead.
+
+`org.jetbrains.kotlin.fir.types.ConeTypeUtilsKt.renderReadableWithFqNames(ConeKotlinType)` method removed
+: Internals of Kotlin compiler.
+
+`org.jetbrains.kotlin.analysis.project.structure.KtModule` class renamed to `org.jetbrains.kotlin.analysis.api.projectStructure.KaModule`
+: Update code usages.
+
+`org.jetbrains.kotlin.fir.expressions.FirAssignmentOperatorStatement` class removed
+: Internals of Kotlin compiler.
+
+
+### Database Plugin 2024.2
+
+`com.intellij.database.datagrid.DataGrid.getCoroutineScope()` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.getModificationTracker()` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+`com.intellij.database.datagrid.DataGrid.adaptForNewQuery()` abstract method added
+: Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
+
+### HTTP Client Plugin 2024.2
+
+`com.intellij.httpClient.http.request.HttpRequestPsiConverter.toRequestConfig(HttpRequest)` method visibility changed from `public` to `private`
+: This method is an implementation detail.
+
+### Dependency Analysis Plugin 2024.2
+
+`com.jetbrains.dependencyAnalysis` package removed
+: The package `com.jetbrains.dependencyAnalysis` has been removed. Please update your code to use the new package `com.jetbrains.dependencyAnalysis.core` instead.
 
 ## 2024.1
 
@@ -265,6 +371,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project. To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, you can get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
 
 ### Database Plugin 2024.1
+
 `com.intellij.database.datagrid.DataGrid.getLocalFilterState()` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
 
@@ -275,6 +382,7 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Use `getDasType()` instead
 
 ### HTTP Client Plugin 2024.1
+
 `com.intellij.httpClient.actions.generation.RequestUrlContextInfo(requestContextData: RequestContextData)` constructor parameter removed
 : Use `com.intellij.httpClient.actions.generation.RequestBody` and `com.intellij.httpClient.actions.generation.HttpRequestUrlPathInfo.Companion.create()` to describe a request body that will be coomputed lazily during the corresponding request generation.
 
@@ -316,9 +424,9 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Private package is no longer available as an API.
 
 ### JavaScript Plugin 2024.1
+
 `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement)` method marked final
 : Override `com.intellij.lang.javascript.documentation.JSDocumentationProvider.generateDoc(PsiElement, PsiElement, Ref<String>)` instead
-
 
 ### Rd Framework 2024.1
 
@@ -336,3 +444,8 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 
 `com.jetbrains.rd.framework.base.RdBindableBaseKt.withId(RdBindableBase, RdId)` method removed
 : Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `withId(RdBindableBase, long)` method in Java and recompile the Kotlin code.
+
+### Properties Plugin 2024.1
+
+Added method parameter `Property` to `com.intellij.lang.properties.PropertiesQuickFixFactory.createRemovePropertyLocalFix()`
+: Supply the property that the fix should be applied for.

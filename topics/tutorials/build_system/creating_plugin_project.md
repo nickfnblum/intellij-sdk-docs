@@ -6,7 +6,20 @@
 
 This documentation page describes a Gradle-based plugin project generated with the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html), but the project generated with [](plugin_github_template.md) covers all the described files and directories.
 
+<snippet id="gradle1xOnly">
+
+> This page covers [](tools_gradle_intellij_plugin.md) only.
+>
+> See the [](tools_intellij_platform_gradle_plugin.md) reference.
+> A dedicated page for it will be provided later.
+>
+{title="Gradle IntelliJ Plugin (1.x) Only"}
+
+</snippet>
+
 ## Creating a Plugin with New Project Wizard
+
+<include from="snippets.md" element-id="gradlePluginVersion"/>
 
 <procedure title="Create IDE Plugin" id="create-ide-plugin">
 
@@ -22,11 +35,11 @@ Launch the <control>New Project</control> wizard via the <ui-path>File | New | P
    For this example select the <control>Kotlin</control> option.
    See also [Kotlin for Plugin Developers](using_kotlin.md) for more information.
 
-   > Projects generated with IntelliJ IDEA 2023.1 or newer, support both Kotlin and Java sources out of the box.
-   > Project generator automatically creates <path>$PLUGIN_DIR$/src/main/kotlin</path> sources directory.
-   > To add Java sources, create <path>$PLUGIN_DIR$/src/main/java</path> directory.
+   > Projects generated with IntelliJ IDEA 2023.1 or newer support both Kotlin and Java sources out of the box.
+   > The Project generator automatically creates <path>\$PLUGIN_DIR\$/src/main/kotlin</path> sources directory.
+   > To add Java sources, create the <path>\$PLUGIN_DIR\$/src/main/java</path> directory manually.
    >
-   {style="note"}
+   {style="note" title="Using Kotlin and Java sources"}
 
 5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
    It is used for the Gradle property `project.group` value in the project's Gradle build script.
@@ -93,7 +106,7 @@ The generated `my_plugin` project <path>build.gradle.kts</path> file:
 plugins {
   id("java")
   id("org.jetbrains.kotlin.jvm") version "1.9.21"
-  id("org.jetbrains.intellij") version "1.17.3"
+  id("org.jetbrains.intellij") version "1.17.4"
 }
 
 group = "com.example"

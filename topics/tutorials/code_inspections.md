@@ -116,14 +116,20 @@ See the [Inspections](inspections.md) topic in UI Guidelines on important guidel
 
 Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
 
-* The inspection description file is expected to be located under <path>$RESOURCES_ROOT_DIRECTORY$/inspectionDescriptions/</path>.
+* The inspection description file is expected to be located under <path>\$RESOURCES_ROOT_DIRECTORY\$/inspectionDescriptions/</path>.
   If the inspection description file is to be located elsewhere, override `getDescriptionUrl()` in the inspection implementation class.
-* The name of the description file is expected to be the inspection <path>$SHORT_NAME$.html</path> as provided by the inspection description, or the inspection implementation class.
+* The name of the description file is expected to be the inspection <path>\$SHORT_NAME\$.html</path> as provided by the inspection description, or the inspection implementation class.
   If a short name is not provided, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
-#### Code Snippets
+> If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all inspection description files have unique names or paths.
+> Otherwise, only the last packed description file will exist in the distribution package.
+>
+{style="warning"}
 
-(2023.2)
+> See the [](providing_translations.md#bundled-translations) section for information about how to provide inspection description translations in plugins.
+
+#### Code Snippets
+<primary-label ref="2023.2"/>
 
 Using the following HTML structure, the description can embed code snippets that will be displayed with syntax highlighting:
 

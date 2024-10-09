@@ -84,7 +84,7 @@ On the plugin side, these entries are defined in the file [`javaInjections.xml`]
 ```
 
 The XML file with the injection configurations is loaded through the `org.intellij.intelliLang.injectionConfig` EP in the file
-[`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/src/META-INF/intellilang-java-support.xml).
+[`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/resources/META-INF/intellilang-java-support.xml).
 
 ```xml
 <extensions defaultExtensionNs="org.intellij.intelliLang">
@@ -212,7 +212,7 @@ If there is no primary `LanguageInjectionPerformer` found, then a fallback injec
 
 The method `performInjection()` does the actual injection into the context PSI element and/or some elements around it if needed in case if they are semantically connected (concatenation injection for instance).
 
-> To use Language Injection API in your project, [add dependency](plugin_dependencies.md#2-project-setup) on the `org.intellij.intelliLang` plugin.
+> To use Language Injection API in your project, [add dependency](plugin_dependencies.md#project-setup) on the `org.intellij.intelliLang` plugin.
 >
 {style="note"}
 
@@ -307,8 +307,9 @@ final class MyDSLInjector implements MultiHostInjector {
 Now, inside the editor the injected portion will work as expected where foo is the method name and `System.out.println(42);` will look and feel like a method body with highlighting, completion, and goto definition working.
 
 ## Formatting
+<primary-label ref="2022.3"/>
 
-To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java) and register in `com.intellij.formatting.injectedOptions` extension point (_2022.3_).
+To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java) and register in `com.intellij.formatting.injectedOptions` extension point.
 
 ## Injection Highlighting
 
