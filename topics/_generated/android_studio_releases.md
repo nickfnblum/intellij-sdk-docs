@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat &#124; 2024.3.1 Canary 9 | ![Canary][canary] | January 10, 2025 | **2024.3.1.9**<p>AI-243.22562.218.2431.12894773</p> | **null**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Canary 8 | ![Canary][canary] | January 6, 2025 | **2024.3.1.8**<p>AI-243.22562.145.2431.12862218</p> | **2024.3.1**<p>243.22562.145</p> |
 | Meerkat &#124; 2024.3.1 Canary 7 | ![Canary][canary] | December 23, 2024 | **2024.3.1.7**<p>AI-243.22562.145.2431.12832016</p> | **2024.3.1**<p>243.22562.145</p> |
 | Meerkat &#124; 2024.3.1 Canary 6 | ![Canary][canary] | December 16, 2024 | **2024.3.1.6**<p>AI-243.22562.145.2431.12789491</p> | **2024.3.1**<p>243.22562.145</p> |
@@ -585,11 +586,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat &#124; 2024.3.1 Canary 9 | ![Canary][canary] | January 10, 2025 | **2024.3.1.9**<p>AI-243.22562.218.2431.12894773</p> | **null**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Canary 8 | ![Canary][canary] | January 6, 2025 | **2024.3.1.8**<p>AI-243.22562.145.2431.12862218</p> | **2024.3.1**<p>243.22562.145</p> |
 | Meerkat &#124; 2024.3.1 Canary 7 | ![Canary][canary] | December 23, 2024 | **2024.3.1.7**<p>AI-243.22562.145.2431.12832016</p> | **2024.3.1**<p>243.22562.145</p> |
 | Meerkat &#124; 2024.3.1 Canary 6 | ![Canary][canary] | December 16, 2024 | **2024.3.1.6**<p>AI-243.22562.145.2431.12789491</p> | **2024.3.1**<p>243.22562.145</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 | ![Release][release] | January 9, 2025 | **2024.2.2.13**<p>AI-242.23726.103.2422.12816248</p> | **2024.2.4**<p>242.23726.103</p> |
-| Ladybug Feature Drop &#124; 2024.2.2 RC 2 | ![RC][rc] | December 16, 2024 | **2024.2.2.12**<p>AI-242.23726.103.2422.12785815</p> | **2024.2.4**<p>242.23726.103</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
