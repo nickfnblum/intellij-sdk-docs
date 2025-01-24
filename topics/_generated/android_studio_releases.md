@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 Canary 2 | ![Canary][canary] | January 23, 2025 | **2024.3.2.2**<p>AI-243.22562.218.2432.12959061</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 1 | ![Canary][canary] | January 21, 2025 | **2024.3.2.1**<p>AI-243.22562.218.2432.12933754</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Beta 1 | ![Beta][beta] | January 22, 2025 | **2024.3.1.10**<p>AI-243.22562.218.2431.12926017</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Canary 9 | ![Canary][canary] | January 10, 2025 | **2024.3.1.9**<p>AI-243.22562.218.2431.12894773</p> | **2024.3.2**<p>243.22562.218</p> |
@@ -588,10 +589,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 Canary 2 | ![Canary][canary] | January 23, 2025 | **2024.3.2.2**<p>AI-243.22562.218.2432.12959061</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 1 | ![Canary][canary] | January 21, 2025 | **2024.3.2.1**<p>AI-243.22562.218.2432.12933754</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Beta 1 | ![Beta][beta] | January 22, 2025 | **2024.3.1.10**<p>AI-243.22562.218.2431.12926017</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Canary 9 | ![Canary][canary] | January 10, 2025 | **2024.3.1.9**<p>AI-243.22562.218.2431.12894773</p> | **2024.3.2**<p>243.22562.218</p> |
-| Meerkat &#124; 2024.3.1 Canary 8 | ![Canary][canary] | January 6, 2025 | **2024.3.1.8**<p>AI-243.22562.145.2431.12862218</p> | **2024.3.1**<p>243.22562.145</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 | ![Release][release] | January 9, 2025 | **2024.2.2.13**<p>AI-242.23726.103.2422.12816248</p> | **2024.2.4**<p>242.23726.103</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
