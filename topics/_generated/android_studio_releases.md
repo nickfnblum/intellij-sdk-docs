@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 Canary 4 | ![Canary][canary] | February 6, 2025 | **2024.3.2.4**<p>AI-243.23654.117.2432.13021186</p> | **2024.3.2**<p>243.23654.117</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 3 | ![Canary][canary] | February 3, 2025 | **2024.3.2.3**<p>AI-243.23654.117.2432.12988063</p> | **2024.3.2**<p>243.23654.117</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 2 | ![Canary][canary] | January 23, 2025 | **2024.3.2.2**<p>AI-243.22562.218.2432.12959061</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 1 | ![Canary][canary] | January 21, 2025 | **2024.3.2.1**<p>AI-243.22562.218.2432.12933754</p> | **2024.3.2**<p>243.22562.218</p> |
@@ -591,9 +592,9 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 Canary 4 | ![Canary][canary] | February 6, 2025 | **2024.3.2.4**<p>AI-243.23654.117.2432.13021186</p> | **2024.3.2**<p>243.23654.117</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 3 | ![Canary][canary] | February 3, 2025 | **2024.3.2.3**<p>AI-243.23654.117.2432.12988063</p> | **2024.3.2**<p>243.23654.117</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 2 | ![Canary][canary] | January 23, 2025 | **2024.3.2.2**<p>AI-243.22562.218.2432.12959061</p> | **2024.3.2**<p>243.22562.218</p> |
-| Meerkat Feature Drop &#124; 2024.3.2 Canary 1 | ![Canary][canary] | January 21, 2025 | **2024.3.2.1**<p>AI-243.22562.218.2432.12933754</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 RC 1 | ![RC][rc] | February 5, 2025 | **2024.3.1.11**<p>AI-243.22562.218.2431.12996373</p> | **2024.3.2**<p>243.22562.218</p> |
 | Meerkat &#124; 2024.3.1 Beta 1 | ![Beta][beta] | January 22, 2025 | **2024.3.1.10**<p>AI-243.22562.218.2431.12926017</p> | **2024.3.2**<p>243.22562.218</p> |
 
