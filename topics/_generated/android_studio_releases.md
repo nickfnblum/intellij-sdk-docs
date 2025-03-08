@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 Canary 8 | ![Canary][canary] | March 7, 2025 | **2024.3.2.8**<p>AI-243.24978.46.2432.13174079</p> | **2024.3.3**<p>243.24978.46</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 7 | ![Canary][canary] | February 27, 2025 | **2024.3.2.7**<p>AI-243.24978.46.2432.13133389</p> | **2024.3.3**<p>243.24978.46</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 6 | ![Canary][canary] | February 21, 2025 | **2024.3.2.6**<p>AI-243.24978.46.2432.13093109</p> | **2024.3.3**<p>243.24978.46</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 5 | ![Canary][canary] | February 13, 2025 | **2024.3.2.5**<p>AI-243.23654.117.2432.13058383</p> | **2024.3.2**<p>243.23654.117</p> |
@@ -599,10 +600,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 Canary 8 | ![Canary][canary] | March 7, 2025 | **2024.3.2.8**<p>AI-243.24978.46.2432.13174079</p> | **2024.3.3**<p>243.24978.46</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 7 | ![Canary][canary] | February 27, 2025 | **2024.3.2.7**<p>AI-243.24978.46.2432.13133389</p> | **2024.3.3**<p>243.24978.46</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Canary 6 | ![Canary][canary] | February 21, 2025 | **2024.3.2.6**<p>AI-243.24978.46.2432.13093109</p> | **2024.3.3**<p>243.24978.46</p> |
 | Meerkat &#124; 2024.3.1 | ![Release][release] | March 4, 2025 | **2024.3.1.13**<p>AI-243.22562.218.2431.13114758</p> | **2024.3.2**<p>243.22562.218</p> |
-| Meerkat &#124; 2024.3.1 RC 2 | ![RC][rc] | February 18, 2025 | **2024.3.1.12**<p>AI-243.22562.218.2431.13054891</p> | **2024.3.2**<p>243.22562.218</p> |
 | Ladybug Feature Drop &#124; 2024.2.2 Patch 2 | ![Patch][patch] | February 26, 2025 | **2024.2.2.15**<p>AI-242.23726.103.2422.13103373</p> | **2024.2.4**<p>242.23726.103</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
