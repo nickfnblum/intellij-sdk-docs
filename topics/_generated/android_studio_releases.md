@@ -2,6 +2,19 @@
 
 <snippet id="releases_table">
 
+## 2025.*
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Narwhal &#124; 2025.1.1 Canary 6 | ![Canary][canary] | April 10, 2025 | **2025.1.1.6**<p>AI-251.23774.16.2511.13338727</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+| Narwhal &#124; 2025.1.1 Canary 5 | ![Canary][canary] | April 8, 2025 | **2025.1.1.5**<p>AI-251.23774.16.2511.13328238</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+| Narwhal &#124; 2025.1.1 Canary 4 | ![Canary][canary] | April 3, 2025 | **2025.1.1.4**<p>AI-251.23774.16.2511.13307899</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+| Narwhal &#124; 2025.1.1 Canary 3 | ![Canary][canary] | March 27, 2025 | **2025.1.1.3**<p>AI-251.23774.16.2511.13279860</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+| Narwhal &#124; 2025.1.1 Canary 2 | ![Canary][canary] | March 20, 2025 | **2025.1.1.2**<p>AI-251.23774.16.2511.13244498</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+| Narwhal &#124; 2025.1.1 Canary 1 | ![Canary][canary] | March 19, 2025 | **2025.1.1.1**<p>AI-251.23774.16.2511.13239840</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+
+
+
 ## 2024.*
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -88,18 +101,6 @@
 | Koala &#124; 2024.1.1 Canary 5 | ![Canary][canary] | April 11, 2024 | **2024.1.1.3**<p>AI-241.14494.240.2411.11700778</p> | **2024.1**<p>241.14494.240</p> |
 | Koala &#124; 2024.1.1 Canary 4 | ![Canary][canary] | April 8, 2024 | **2024.1.1.2**<p>AI-241.14494.158.2411.11678081</p> | **2024.1**<p>241.14494.158</p> |
 | Koala &#124; 2024.1.1 Canary 3 | ![Canary][canary] | April 2, 2024 | **2024.1.1.1**<p>AI-241.14494.158.2411.11648550</p> | **2024.1**<p>241.14494.158</p> |
-
-
-
-## 2025.*
-
-| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
-|--------------|:-------:|--------------|---------|-----------------------|
-| Narwhal &#124; 2025.1.1 Canary 5 | ![Canary][canary] | April 8, 2025 | **2025.1.1.5**<p>AI-251.23774.16.2511.13328238</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
-| Narwhal &#124; 2025.1.1 Canary 4 | ![Canary][canary] | April 3, 2025 | **2025.1.1.4**<p>AI-251.23774.16.2511.13307899</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
-| Narwhal &#124; 2025.1.1 Canary 3 | ![Canary][canary] | March 27, 2025 | **2025.1.1.3**<p>AI-251.23774.16.2511.13279860</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
-| Narwhal &#124; 2025.1.1 Canary 2 | ![Canary][canary] | March 20, 2025 | **2025.1.1.2**<p>AI-251.23774.16.2511.13244498</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
-| Narwhal &#124; 2025.1.1 Canary 1 | ![Canary][canary] | March 19, 2025 | **2025.1.1.1**<p>AI-251.23774.16.2511.13239840</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
 
 
 
@@ -616,9 +617,9 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Narwhal &#124; 2025.1.1 Canary 6 | ![Canary][canary] | April 10, 2025 | **2025.1.1.6**<p>AI-251.23774.16.2511.13338727</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
 | Narwhal &#124; 2025.1.1 Canary 5 | ![Canary][canary] | April 8, 2025 | **2025.1.1.5**<p>AI-251.23774.16.2511.13328238</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
 | Narwhal &#124; 2025.1.1 Canary 4 | ![Canary][canary] | April 3, 2025 | **2025.1.1.4**<p>AI-251.23774.16.2511.13307899</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
-| Narwhal &#124; 2025.1.1 Canary 3 | ![Canary][canary] | March 27, 2025 | **2025.1.1.3**<p>AI-251.23774.16.2511.13279860</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 RC 2 | ![RC][rc] | April 9, 2025 | **2024.3.2.11**<p>AI-243.25659.59.2432.13314846</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 RC 1 | ![RC][rc] | April 1, 2025 | **2024.3.2.10**<p>AI-243.25659.59.2432.13282907</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 
