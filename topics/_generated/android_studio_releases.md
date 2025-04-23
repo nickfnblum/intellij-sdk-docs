@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Meerkat Feature Drop &#124; 2024.3.2 RC 3 | ![RC][rc] | April 22, 2025 | **2024.3.2.12**<p>AI-243.25659.59.2432.13371692</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 RC 2 | ![RC][rc] | April 9, 2025 | **2024.3.2.11**<p>AI-243.25659.59.2432.13314846</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 RC 1 | ![RC][rc] | April 1, 2025 | **2024.3.2.10**<p>AI-243.25659.59.2432.13282907</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 Beta 1 | ![Beta][beta] | March 18, 2025 | **2024.3.2.9**<p>AI-243.25659.59.2432.13218502</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
@@ -621,7 +622,7 @@
 |--------------|:-------:|--------------|---------|-----------------------|
 | Narwhal &#124; 2025.1.1 Canary 7 | ![Canary][canary] | April 17, 2025 | **2025.1.1.7**<p>AI-251.23774.16.2511.13371696</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
 | Narwhal &#124; 2025.1.1 Canary 6 | ![Canary][canary] | April 10, 2025 | **2025.1.1.6**<p>AI-251.23774.16.2511.13338727</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
-| Narwhal &#124; 2025.1.1 Canary 5 | ![Canary][canary] | April 8, 2025 | **2025.1.1.5**<p>AI-251.23774.16.2511.13328238</p> | **251.23774.16-EAP-SNAPSHOT**<p>251.23774.16</p> |
+| Meerkat Feature Drop &#124; 2024.3.2 RC 3 | ![RC][rc] | April 22, 2025 | **2024.3.2.12**<p>AI-243.25659.59.2432.13371692</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 | Meerkat Feature Drop &#124; 2024.3.2 RC 2 | ![RC][rc] | April 9, 2025 | **2024.3.2.11**<p>AI-243.25659.59.2432.13314846</p> | **243.25659-EAP-CANDIDATE-SNAPSHOT**<p>243.25659.59</p> |
 | Meerkat &#124; 2024.3.1 Patch 2 | ![Patch][patch] | April 21, 2025 | **2024.3.1.15**<p>AI-243.24978.46.2431.13363775</p> | **2024.3.3**<p>243.24978.46</p> |
 
