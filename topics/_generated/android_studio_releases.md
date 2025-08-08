@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Narwhal 3 Feature Drop &#124; 2025.1.3 Canary 4 | ![Canary][canary] | August 7, 2025 | **2025.1.3.4**<p>AI-251.26094.121.2513.13898001</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.3 Canary 3 | ![Canary][canary] | July 31, 2025 | **2025.1.3.3**<p>AI-251.26094.121.2513.13865387</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.3 Canary 2 | ![Canary][canary] | July 24, 2025 | **2025.1.3.2**<p>AI-251.26094.121.2513.13829813</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.3 Canary 1 | ![Canary][canary] | July 21, 2025 | **2025.1.3.1**<p>AI-251.26094.121.2513.13793675</p> | **2025.1.2**<p>251.26094.121</p> |
@@ -644,11 +645,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Narwhal 3 Feature Drop &#124; 2025.1.3 Canary 4 | ![Canary][canary] | August 7, 2025 | **2025.1.3.4**<p>AI-251.26094.121.2513.13898001</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.3 Canary 3 | ![Canary][canary] | July 31, 2025 | **2025.1.3.3**<p>AI-251.26094.121.2513.13865387</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.3 Canary 2 | ![Canary][canary] | July 24, 2025 | **2025.1.3.2**<p>AI-251.26094.121.2513.13829813</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.3 Canary 1 | ![Canary][canary] | July 21, 2025 | **2025.1.3.1**<p>AI-251.26094.121.2513.13793675</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.2 | ![Release][release] | July 31, 2025 | **2025.1.2.11**<p>AI-251.26094.121.2512.13840223</p> | **2025.1.2**<p>251.26094.121</p> |
-| Narwhal Feature Drop &#124; 2025.1.2 RC 1 | ![RC][rc] | July 18, 2025 | **2025.1.2.10**<p>AI-251.26094.121.2512.13795096</p> | **2025.1.2**<p>251.26094.121</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
