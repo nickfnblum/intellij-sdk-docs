@@ -9,6 +9,7 @@
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 3 | ![Canary][canary] | August 29, 2025 | **2025.1.4.3**<p>AI-251.27812.49.2514.14014849</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 2 | ![Canary][canary] | August 21, 2025 | **2025.1.4.2**<p>AI-251.27812.49.2514.13971338</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 1 | ![Canary][canary] | August 14, 2025 | **2025.1.4.1**<p>AI-251.26094.121.2514.13932717</p> | **2025.1.2**<p>251.26094.121</p> |
+| Narwhal 3 Feature Drop &#124; 2025.1.3 | ![Release][release] | September 2, 2025 | **2025.1.3.7**<p>AI-251.26094.121.2513.14007798</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal 3 Feature Drop &#124; 2025.1.3 RC 2 | ![RC][rc] | August 28, 2025 | **2025.1.3.6**<p>AI-251.26094.121.2513.13991806</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal 3 Feature Drop &#124; 2025.1.3 RC 1 | ![RC][rc] | August 14, 2025 | **2025.1.3.5**<p>AI-251.26094.121.2513.13930206</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal 3 Feature Drop &#124; 2025.1.3 Canary 4 | ![Canary][canary] | August 7, 2025 | **2025.1.3.4**<p>AI-251.26094.121.2513.13898001</p> | **2025.1.2**<p>251.26094.121</p> |
@@ -654,9 +655,9 @@
 |--------------|:-------:|--------------|---------|-----------------------|
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 3 | ![Canary][canary] | August 29, 2025 | **2025.1.4.3**<p>AI-251.27812.49.2514.14014849</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 2 | ![Canary][canary] | August 21, 2025 | **2025.1.4.2**<p>AI-251.27812.49.2514.13971338</p> | **2025.1.5**<p>251.27812.49</p> |
+| Narwhal 3 Feature Drop &#124; 2025.1.3 | ![Release][release] | September 2, 2025 | **2025.1.3.7**<p>AI-251.26094.121.2513.14007798</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal 3 Feature Drop &#124; 2025.1.3 RC 2 | ![RC][rc] | August 28, 2025 | **2025.1.3.6**<p>AI-251.26094.121.2513.13991806</p> | **2025.1.2**<p>251.26094.121</p> |
 | Narwhal Feature Drop &#124; 2025.1.2 Patch 2 | ![Patch][patch] | August 28, 2025 | **2025.1.2.13**<p>AI-251.26094.121.2512.13991807</p> | **2025.1.2**<p>251.26094.121</p> |
-| Narwhal Feature Drop &#124; 2025.1.2 Patch 1 | ![Patch][patch] | August 18, 2025 | **2025.1.2.12**<p>AI-251.26094.121.2512.13930704</p> | **2025.1.2**<p>251.26094.121</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
