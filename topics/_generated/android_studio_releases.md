@@ -9,6 +9,7 @@
 | Otter &#124; 2025.2.1 Canary 3 | ![Canary][canary] | September 26, 2025 | **2025.2.1.3**<p>AI-252.25557.131.2521.14170811</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 Canary 2 | ![Canary][canary] | September 25, 2025 | **2025.2.1.2**<p>AI-252.25557.131.2521.14165931</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 Canary 1 | ![Canary][canary] | September 22, 2025 | **2025.2.1.1**<p>AI-252.25557.131.2521.14126747</p> | **2025.2.1**<p>252.25557.131</p> |
+| Narwhal 4 Feature Drop &#124; 2025.1.4 RC 2 | ![RC][rc] | September 29, 2025 | **2025.1.4.7**<p>AI-251.27812.49.2514.14171003</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 RC 1 | ![RC][rc] | September 24, 2025 | **2025.1.4.6**<p>AI-251.27812.49.2514.14156358</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 5 | ![Canary][canary] | September 11, 2025 | **2025.1.4.5**<p>AI-251.27812.49.2514.14085407</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 4 | ![Canary][canary] | September 4, 2025 | **2025.1.4.4**<p>AI-251.27812.49.2514.14044074</p> | **2025.1.5**<p>251.27812.49</p> |
@@ -662,8 +663,8 @@
 | Otter &#124; 2025.2.1 Canary 3 | ![Canary][canary] | September 26, 2025 | **2025.2.1.3**<p>AI-252.25557.131.2521.14170811</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 Canary 2 | ![Canary][canary] | September 25, 2025 | **2025.2.1.2**<p>AI-252.25557.131.2521.14165931</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 Canary 1 | ![Canary][canary] | September 22, 2025 | **2025.2.1.1**<p>AI-252.25557.131.2521.14126747</p> | **2025.2.1**<p>252.25557.131</p> |
+| Narwhal 4 Feature Drop &#124; 2025.1.4 RC 2 | ![RC][rc] | September 29, 2025 | **2025.1.4.7**<p>AI-251.27812.49.2514.14171003</p> | **2025.1.5**<p>251.27812.49</p> |
 | Narwhal 4 Feature Drop &#124; 2025.1.4 RC 1 | ![RC][rc] | September 24, 2025 | **2025.1.4.6**<p>AI-251.27812.49.2514.14156358</p> | **2025.1.5**<p>251.27812.49</p> |
-| Narwhal 4 Feature Drop &#124; 2025.1.4 Canary 5 | ![Canary][canary] | September 11, 2025 | **2025.1.4.5**<p>AI-251.27812.49.2514.14085407</p> | **2025.1.5**<p>251.27812.49</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
