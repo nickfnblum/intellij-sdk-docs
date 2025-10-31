@@ -6,8 +6,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Otter 2 Feature Drop &#124; 2025.2.2 Canary 3 | ![Canary][canary] | October 30, 2025 | **2025.2.2.3**<p>AI-252.25557.131.2522.14357309</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 2 | ![Canary][canary] | October 28, 2025 | **2025.2.2.2**<p>AI-252.25557.131.2522.14326795</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 1 | ![Canary][canary] | October 16, 2025 | **2025.2.2.1**<p>AI-252.25557.131.2522.14279661</p> | **2025.2.1**<p>252.25557.131</p> |
+| Otter &#124; 2025.2.1 | ![Release][release] | October 30, 2025 | **2025.2.1.7**<p>AI-252.25557.131.2521.14344949</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 RC 1 | ![RC][rc] | October 16, 2025 | **2025.2.1.6**<p>AI-252.25557.131.2521.14270146</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 Canary 5 | ![Canary][canary] | October 9, 2025 | **2025.2.1.5**<p>AI-252.25557.131.2521.14240541</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 Canary 4 | ![Canary][canary] | October 2, 2025 | **2025.2.1.4**<p>AI-252.25557.131.2521.14204915</p> | **2025.2.1**<p>252.25557.131</p> |
@@ -666,11 +668,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Otter 2 Feature Drop &#124; 2025.2.2 Canary 3 | ![Canary][canary] | October 30, 2025 | **2025.2.2.3**<p>AI-252.25557.131.2522.14357309</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 2 | ![Canary][canary] | October 28, 2025 | **2025.2.2.2**<p>AI-252.25557.131.2522.14326795</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 1 | ![Canary][canary] | October 16, 2025 | **2025.2.2.1**<p>AI-252.25557.131.2522.14279661</p> | **2025.2.1**<p>252.25557.131</p> |
+| Otter &#124; 2025.2.1 | ![Release][release] | October 30, 2025 | **2025.2.1.7**<p>AI-252.25557.131.2521.14344949</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 RC 1 | ![RC][rc] | October 16, 2025 | **2025.2.1.6**<p>AI-252.25557.131.2521.14270146</p> | **2025.2.1**<p>252.25557.131</p> |
-| Otter &#124; 2025.2.1 Canary 5 | ![Canary][canary] | October 9, 2025 | **2025.2.1.5**<p>AI-252.25557.131.2521.14240541</p> | **2025.2.1**<p>252.25557.131</p> |
-| Narwhal 4 Feature Drop &#124; 2025.1.4 | ![Release][release] | October 9, 2025 | **2025.1.4.8**<p>AI-251.27812.49.2514.14217341</p> | **2025.1.5**<p>251.27812.49</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
