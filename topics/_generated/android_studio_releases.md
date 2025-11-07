@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Otter 2 Feature Drop &#124; 2025.2.2 Canary 4 | ![Canary][canary] | November 6, 2025 | **2025.2.2.4**<p>AI-252.27397.103.2522.14395761</p> | **2025.2.4**<p>252.27397.103</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 3 | ![Canary][canary] | October 30, 2025 | **2025.2.2.3**<p>AI-252.25557.131.2522.14357309</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 2 | ![Canary][canary] | October 28, 2025 | **2025.2.2.2**<p>AI-252.25557.131.2522.14326795</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 1 | ![Canary][canary] | October 16, 2025 | **2025.2.2.1**<p>AI-252.25557.131.2522.14279661</p> | **2025.2.1**<p>252.25557.131</p> |
@@ -668,11 +669,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Otter 2 Feature Drop &#124; 2025.2.2 Canary 4 | ![Canary][canary] | November 6, 2025 | **2025.2.2.4**<p>AI-252.27397.103.2522.14395761</p> | **2025.2.4**<p>252.27397.103</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 3 | ![Canary][canary] | October 30, 2025 | **2025.2.2.3**<p>AI-252.25557.131.2522.14357309</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 2 | ![Canary][canary] | October 28, 2025 | **2025.2.2.2**<p>AI-252.25557.131.2522.14326795</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 Canary 1 | ![Canary][canary] | October 16, 2025 | **2025.2.2.1**<p>AI-252.25557.131.2522.14279661</p> | **2025.2.1**<p>252.25557.131</p> |
 | Otter &#124; 2025.2.1 | ![Release][release] | October 30, 2025 | **2025.2.1.7**<p>AI-252.25557.131.2521.14344949</p> | **2025.2.1**<p>252.25557.131</p> |
-| Otter &#124; 2025.2.1 RC 1 | ![RC][rc] | October 16, 2025 | **2025.2.1.6**<p>AI-252.25557.131.2521.14270146</p> | **2025.2.1**<p>252.25557.131</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
