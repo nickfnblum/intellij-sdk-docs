@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Otter 3 Feature Drop &#124; 2025.2.3 RC 1 | ![RC][rc] | December 18, 2025 | **2025.2.3.6**<p>AI-252.28238.7.2523.14608894</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 3 Feature Drop &#124; 2025.2.3 Canary 5 | ![Canary][canary] | December 11, 2025 | **2025.2.3.5**<p>AI-252.28238.7.2523.14575018</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 3 Feature Drop &#124; 2025.2.3 Canary 4 | ![Canary][canary] | December 8, 2025 | **2025.2.3.4**<p>AI-252.28238.7.2523.14542061</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 3 Feature Drop &#124; 2025.2.3 Canary 3 | ![Canary][canary] | November 26, 2025 | **2025.2.3.3**<p>AI-252.28238.7.2523.14499447</p> | **2025.2.5**<p>252.28238.7</p> |
@@ -678,11 +679,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Otter 3 Feature Drop &#124; 2025.2.3 RC 1 | ![RC][rc] | December 18, 2025 | **2025.2.3.6**<p>AI-252.28238.7.2523.14608894</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 3 Feature Drop &#124; 2025.2.3 Canary 5 | ![Canary][canary] | December 11, 2025 | **2025.2.3.5**<p>AI-252.28238.7.2523.14575018</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 3 Feature Drop &#124; 2025.2.3 Canary 4 | ![Canary][canary] | December 8, 2025 | **2025.2.3.4**<p>AI-252.28238.7.2523.14542061</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 3 Feature Drop &#124; 2025.2.3 Canary 3 | ![Canary][canary] | November 26, 2025 | **2025.2.3.3**<p>AI-252.28238.7.2523.14499447</p> | **2025.2.5**<p>252.28238.7</p> |
 | Otter 2 Feature Drop &#124; 2025.2.2 | ![Release][release] | December 4, 2025 | **2025.2.2.7**<p>AI-252.27397.103.2522.14514259</p> | **2025.2.4**<p>252.27397.103</p> |
-| Otter 2 Feature Drop &#124; 2025.2.2 RC 2 | ![RC][rc] | November 21, 2025 | **2025.2.2.6**<p>AI-252.27397.103.2522.14468004</p> | **2025.2.4**<p>252.27397.103</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
