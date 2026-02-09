@@ -78,6 +78,33 @@ It includes:
 - `marketplace()` – JetBrains Marketplace plugins repository
 - `intellijDependencies()` – required for resolving extra IntelliJ Platform dependencies used for running specific tasks
 
+## Working in Isolated Networks
+{#mirrored-repositories}
+
+When Gradle runs in an isolated network, it cannot reach the public repositories used by IntelliJ Platform artifacts, plugins, and additional dependencies.
+In such setups, avoid using `defaultRepositories()` and replace it with your internal mirror repositories.
+Even with mirrors, keep `localPlatformArtifacts()` in `repositories {}` because it is a local Ivy repository required for bundled plugins, local IDEs, and other local artifacts.
+
+The `defaultRepositories()` helper adds the following remote repositories.
+Mirror or proxy these endpoints internally:
+
+Cache redirector endpoints (used by default):
+- IntelliJ Platform releases: `https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository/releases`
+- IntelliJ Platform snapshots: `https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository/snapshots`
+- IntelliJ Platform dependencies: `https://cache-redirector.jetbrains.com/intellij-dependencies`
+- JetBrains Marketplace (Maven): `https://cache-redirector.jetbrains.com/plugins.jetbrains.com/maven`
+- JetBrains Runtime (Ivy): `https://cache-redirector.jetbrains.com/intellij-jbr`
+
+Direct endpoints (when cache redirector is disabled):
+- IntelliJ Platform releases: `https://www.jetbrains.com/intellij-repository/releases`
+- IntelliJ Platform snapshots: `https://www.jetbrains.com/intellij-repository/snapshots`
+- IntelliJ Platform dependencies: `https://packages.jetbrains.team/maven/p/ij/intellij-dependencies`
+- JetBrains Marketplace (Maven): `https://plugins.jetbrains.com/maven`
+
+Installer repositories (Ivy):
+- JetBrains IDE installers: `https://download.jetbrains.com`
+- Android Studio installers: `https://redirector.gvt1.com/edgedl/android/studio`
+
 ## IntelliJ Platform Installers
 
 IntelliJ Platform installers are the final IDE distributions delivered to end-users for installing and running products on their machines.
