@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Configuring Kotlin Support
 
@@ -257,25 +257,6 @@ To avoid unnecessary classloading (and thus slowdown in IDE startup), `companion
 Anything else must be a top-level declaration or stored in an `object`.
 
 Use inspection <control>Plugin DevKit | Code | Companion object in extensions</control> to highlight such problems (2023.3).
-
-## Kotlin Code FAQ
-
-### Analysis API
-<primary-label ref="2024.2"/>
-
-Starting from IntelliJ IDEA 2025.1, K2 Kotlin mode is enabled by default. To ensure your plugin works with the newest versions of IntelliJ IDEA, you must migrate to the Analysis API and declare compatibility with the K2 compiler.
-
-For migration details, see [Migrating from K1](https://kotlin.github.io/analysis-api/migrating-from-k1.html).
-
-For comprehensive information about the Analysis API, refer to [Kotlin Analysis API Documentation](https://kotlin.github.io/analysis-api/index_md.html).
-
-### Testing K1 (K2) mode 
-
-See [Testing in K1 Locally](https://kotlin.github.io/analysis-api/testing-in-k1-locally.html).
-
-### Miscellaneous
-
-[How to shorten references](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
 
 ## Example Plugins Implemented in Kotlin
 
