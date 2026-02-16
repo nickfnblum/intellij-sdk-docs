@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Poly Symbols
 <primary-label ref="2025.2"/>
@@ -92,7 +92,7 @@ In most cases the implementation would simply call `PolySymbolSearchTarget.creat
 : Symbol can also implement the `SearchTarget` interface directly and override its methods, in which case `PolySymbolSearchTarget` returned by `searchTarget` property is ignored.
 If the returned target is not a `PolySymbolSearchTarget`, a dedicated `UsageSearcher` needs to be implemented to handle it.
 
-`searchTarget`
+`renameTarget`
 : Implement to provide rename refactoring for the symbol.
 In most cases the implementation would simply call `PolySymbolRenameTarget.create`.
 
