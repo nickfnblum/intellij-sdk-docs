@@ -178,7 +178,7 @@ gantt
     axisFormat ‎
     section Lifetimes
         Application Scope                               : done, 0, 10
-        Project Scope                                   : done, 2, 8
+        Project Scope                                   : done, 2, 9
         Plugin A Scope                                  : active, done, 1, 6
         Project × Plugin A Scope                        : active, done, 2, 6
         Plugin B Scope                                  : 4, 10
