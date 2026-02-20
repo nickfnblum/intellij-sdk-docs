@@ -64,7 +64,7 @@ Make icon buttons easily accessible with <control>Tab</control>. Focused button 
 
 ![](search_field_tab_focus.png){width=706}
 
-### Clear a Search String
+### Clear a search string
 
 Show the <control>Clear</control> button <icon src="../../../images/ui/search_field/search_field_close_icon.png" width="20"/> when the search field has been filled.
 When the button is clicked, clear the search field and restore the content to its default state.
@@ -130,7 +130,7 @@ Fit the search field to a popup window or to a toolbar if it has top borders. Th
 
 #### Speed Search
 
-Show the search field on demand when search is supplementary to other functionality or if space is limited. The search field should be accessible with <shortcut>cmd+F</shortcut> on macOS and <shortcut>Ctrl + F</shortcut> on Windows/Linux.
+Show the search field on demand when search is supplementary to other functionality or if space is limited. The search field should be accessible with <shortcut>⌘+F</shortcut> on macOS and <shortcut>Ctrl + F</shortcut> on Windows/Linux.
 For example, space in the Project view is limited and too loaded to always show the Search bar:
 
 ![](search_field_project.png){width=706}
@@ -144,10 +144,6 @@ For a search field which is displayed as an input field in a group of controls, 
 #### Above lists and trees {#list-trees-search-size}
 
 When placed above lists or trees, expand the field to the width of the list or tree.
-
-#### Speed search {#speed-search-size}
-
-For a search field shown on demand, for example, in the <control>Project</control> tool window, expand the field to the width of the tool window.
 
 <!-- #### In a toolbar {#toolbar-search-size}
 
