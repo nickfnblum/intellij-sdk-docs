@@ -47,7 +47,7 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 [jle2]: https://plugins.jetbrains.com/author/ed9cc7eb-74f5-46c1-b0df-67162fe1a1c5
 [jle3]: https://plugins.jetbrains.com/plugin/11058-extra-icons/
 [ac1]: mailto:achapialiou@gmail.com
-[ac2]: https://plugins.jetbrains.com/vendor/ccf55862-f380-4c27-a139-7ba670cfce74
+[ac2]: https://plugins.jetbrains.com/vendor/achapialiou
 [ac3]: https://plugins.jetbrains.com/plugin/21206-qodo-gen-formerly-codiumate
 [ac4]: https://plugins.jetbrains.com/plugin/10972-snyk-security
 [tj1]: mailto:trent@revenate.io
