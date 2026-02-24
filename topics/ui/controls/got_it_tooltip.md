@@ -12,7 +12,7 @@
 
 </tldr>
 
-A Got It tooltip teaches users about a new or changed behavior and gives information about it.
+A Got It tooltip informs users about a new or changed behavior and provides a short summary of the change.
 
 ![](got_it.png){width=706}
 
@@ -22,7 +22,7 @@ A Got It tooltip teaches users about a new or changed behavior and gives informa
 
 ### Body text
 
-Always add the body text. The text should be short and describe what the tooltip is showing.
+Always add the body text.  Shortly describe what the tooltip is showing.
 
 Don't use body text as a title.
 
@@ -77,9 +77,7 @@ new GotItTooltip(TOOLTIP_ID, GET_IT_TEXT, parentDisposable)
 
 ### Step counter
 
-Use a step counter to numerate a group of sequential Got It tooltips.
-
-<note>Only group tooltips that show related content.</note>
+Use a step counter to number a sequence of related Got It tooltips.
 
 ![](got_it_steps.png){width=706}
 
@@ -181,9 +179,13 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 
 ## When to use
 
+### Small UI controls
+
+Point to small and essential controls that can be overlooked in a dense interface.
+
 ### New feature
 
-Teach users about a new improvement of a feature contextually when they start working with a tool. Describe the behavior and the benefit for users.
+Introduce users to a feature improvement contextually when they start using it. Explain how it works and highlight its benefits.
 
 <table style="none" border="false">
   <tr>
@@ -200,6 +202,8 @@ Teach users about a new improvement of a feature contextually when they start wo
 
 Suggest a new pattern to a user's task that improves their workflow.
 
+<!-- TODO: add an example -->
+
 ### Ambiguous behavior
 
 Explain behavior that is not clear from the UI.
@@ -212,7 +216,7 @@ For example, when extracting a method, users can change only the method name in 
 
 ### Presenting a new tool
 
-Don't use the Got It tooltip as a marketing tool. It distracts users, especially on a startup. Use marketing channels for this purpose.
+Don't use the Got It tooltip as a marketing tool. It distracts users, especially during startup. Use marketing channels for this purpose.
 
 ### Nothing to point to
 
@@ -231,7 +235,7 @@ When there is nothing to point to in a dialog or a tool window, use a [banner](b
 
 ### Feedback from the interface
 
-Don't use Got It tooltips to give users a feedback from the interface. Use [notifications](balloon.md) instead.
+Don't use Got It tooltips to give users feedback from the interface. Use [notifications](balloon.md) instead.
 
 <table style="none" border="false">
   <tr>
@@ -246,7 +250,7 @@ Don't use Got It tooltips to give users a feedback from the interface. Use [noti
 
 ### New option in a tree or list
 
-When there is a new option in a tree or a list of choices that users see regularly, use a badge instead.
+For updates to frequently used menus, use a badge instead of a Got It tooltip to avoid disrupting the user's existing workflow.
 
 <table style="none" border="false">
   <tr>
@@ -261,13 +265,17 @@ When there is a new option in a tree or a list of choices that users see regular
 
 ## How to use
 
-### Small UI controls
+### Single use
 
-Point to a small and important UI control that can be missed among other information on the screen.
+Show a Got It tooltip only once. Never show it again after the user closes it
 
 ### Showing a group of tooltips
 
-Show a sequential group of tooltips only when users initiate it. Users can launch the show, for example, by pressing a respective button in the interface.
+Show a sequence of tooltips only when users initiate it. Users can start a tooltip tour, for example, by pressing a respective button in the interface.
+
+For example, <control>Start Quick Tour</control> initiates a tour of the new functionality:
+
+![](got_it_initiate.png){width=706}
 
 ### Text length and formatting
 
@@ -387,7 +395,7 @@ The tooltip disappears when:
 
 ### Multiple Got It tooltips
 
-If several tooltips appear on application start, they are shown one by one.
+If several tooltips appear at the same time, they are shown one by one.
 
 ### Text width
 
