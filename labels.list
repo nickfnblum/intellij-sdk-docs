@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
 <labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
@@ -72,6 +72,9 @@
   </primary-label>
   <primary-label id="2025.3" short-name="2025.3+" name="2025.3+">
     Available in IDE version 2025.3 or later
+  </primary-label>
+  <primary-label id="2026.1" short-name="2026.1+" name="2026.1+">
+    Available in IDE version 2026.1 or later
   </primary-label>
 
   <secondary-label id="deprecated" name="Deprecated" color="red">
