@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Quick Start Guide
 
@@ -16,6 +16,7 @@ It will familiarize you with the working environment, project structure, and fre
 * [](plugin_required_experience.md)
 * [](plugin_types.md)
 * [](developing_plugins.md)
+* [](split_mode_for_remote_development.md)
 * [](plugin_structure.topic)
 * [Implementing Plugin in Kotlin](using_kotlin.md)
 * [](plugin_signing.md)

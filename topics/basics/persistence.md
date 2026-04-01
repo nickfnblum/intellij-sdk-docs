@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Persistence Model
 
@@ -10,3 +10,6 @@ For example, [Run Configurations](run_configurations.md) and [Settings](settings
 There are two distinct approaches, depending on the type of data being persisted:
 * [Persisting State of Components](persisting_state_of_components.md)
 * [Persisting Sensitive Data](persisting_sensitive_data.md)
+
+[Split plugins](split_mode_for_remote_development.md) may also need explicit synchronization metadata for persisted settings.
+See [](persistent_state_in_split_mode.md).

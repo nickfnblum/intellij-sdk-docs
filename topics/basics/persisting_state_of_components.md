@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Persisting State of Components
 
@@ -12,6 +12,11 @@ Persisting the state of components for IntelliJ Platform plugins and sharing set
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 The API allows for persisting simple key-value entries and complex state classes.
+
+> [Split plugins](split_mode_for_remote_development.md) may need explicit frontend and backend synchronization metadata in addition to a regular `PersistentStateComponent` implementation.
+> See [](persistent_state_in_split_mode.md).
+>
+{style="note" title="Split Mode"}
 
 > For persisting sensitive data like passwords, see [](persisting_sensitive_data.md).
 >

@@ -802,12 +802,12 @@ Type
 
 </tldr>
 
-When you develop a plugin, you may want to check how it works in remote development mode, when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
+When you develop a plugin, you may want to check how it works in [split mode](split_mode_for_remote_development.md), when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
 
 This property allows running the IDE with backend and frontend parts running in separate processes.
-The developed plugin is installed in the backend part.
+Use `splitModeTarget` to specify whether the developed plugin is installed in the frontend, backend, or both parts.
 
-Split Mode requires the IntelliJ Platform in the version `241.14473` or later.
+[Split Mode](split_mode_for_remote_development.md) requires the IntelliJ Platform in the version `241.14473` or later.
 
 
 ### `splitMode`
@@ -827,6 +827,7 @@ Default value
 {#SplitModeAware-splitModeTarget}
 
 Specifies in which part of the product the developed plugin should be installed.
+The default comes from [`intellijPlatform.splitModeTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitModeTarget) and is backend-only unless configured otherwise.
 
 {type="narrow"}
 Type

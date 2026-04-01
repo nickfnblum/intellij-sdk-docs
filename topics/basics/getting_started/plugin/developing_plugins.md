@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Developing a Plugin
 
@@ -49,6 +49,7 @@ A dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is availa
   * [](plugin_github_template.md)
 * [](configuring_gradle.md)
   * [](configuring_plugin_project.md) _(Obsolete)_
+* [](configuring_split_mode.md)
 * [](using_kotlin.md)
 * [](plugin_signing.md)
 * [](publishing_plugin.md)

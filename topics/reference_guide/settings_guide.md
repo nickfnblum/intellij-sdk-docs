@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Settings Guide
 
@@ -9,6 +9,8 @@ On this page, the term "Settings" means the same as "Preferences" on some platfo
 
 Plugins can create and store Settings to capture their configuration in a way that uses the IntelliJ Platform [Persistence Model](persisting_state_of_components.md).
 The User Interface (UI) for these custom Settings can be added to the [IDE Settings dialog](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html).
+For [split plugins](split_mode_for_remote_development.md), settings persistence may also require explicit frontend and backend synchronization.
+See [](persistent_state_in_split_mode.md).
 
 Settings can [affect different levels](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html) of scope.
 This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.

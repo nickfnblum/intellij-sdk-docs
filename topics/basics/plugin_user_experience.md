@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin User Experience (UX)
 
@@ -60,6 +60,22 @@ Slow highlighting, code completion, code generation, and other features may brea
 Always try to follow the performance tips described on the relevant topic pages, e.g., [](psi_performance.md), [](threading_model.md#avoiding-ui-freezes), [](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 Making as much functionality as possible working during [dumb mode](indexing_and_psi_stubs.md#dumb-mode) can also improve perceived performance.
+For [split plugins](split_mode_for_remote_development.md), perceived performance also depends on where feature logic runs.
+Tool windows, dialogs, editor interactions, and other latency-sensitive behavior should be designed for frontend and backend separation from the start.
+See [](split_mode_for_remote_development.md) and [](split_mode_feature_development.md).
+
+### Optimal UX in Split Mode
+
+An IDE working in [Split Mode](split_mode_for_remote_development.md) has separate frontend and backend processes that likely work on physically different machines.
+
+If a plugin is installed on the backend and provides interactive UI, the feature may still work, but every meaningful interaction crosses the frontend and backend boundary.
+The result can be laggy tool windows, dialogs, popups, typing assistance, other editor reactions.
+
+If a plugin is installed on the frontend and assumes direct access to project-local resources, it can end up working with the wrong machine or without the required backend state.
+Typical problem areas include file system access, VFS events, PSI, indexes, project model, and external process execution.
+
+The best UX usually comes from keeping UI and immediate interactions on the frontend, project-local and heavy logic on the backend, and exchanging only the required data between them.
+See [](split_mode_for_remote_development.md) and [](split_mode_feature_development.md).
 
 ## Distribution Size
 

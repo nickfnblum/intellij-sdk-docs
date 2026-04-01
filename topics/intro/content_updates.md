@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### March
 {#march-26}
 
+Split Mode (Remote Development)
+: Add a new section about [Split Mode and Remote Development](split_mode_for_remote_development.md).
+
 Top-Level Notifications
 : Describe [notification balloons](notification_balloons.md) showing relevant information without interrupting the developer's flow.
 
