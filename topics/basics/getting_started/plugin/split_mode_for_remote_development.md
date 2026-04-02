@@ -92,6 +92,7 @@ The only difference is that both frontend and backend functionality are combined
 IntelliJ Platform determines whether a particular module belongs to the frontend or the backend by examining its dependencies on the corresponding `intellij.platform.frontend` and `intellij.platform.frontend.backend` modules.
 If a dependency is not satisfied, the module does not get loaded.
 Both frontend and backend dependencies are satisfied when an IDE runs in monolithic mode.
+See [Plugin Management](plugin_management_in_split_mode.md) for more details.
 
 A more detailed architecture is presented on the following diagram:
 

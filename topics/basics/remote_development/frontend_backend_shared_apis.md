@@ -17,7 +17,7 @@ If a feature needs a different placement, review the specific API behavior and v
 
 Inspection <ui-path>Plugin DevKit | Code | Frontend and Backend API Usage</ui-path> highlights inappropriate API usage.
 
-See also [Modular Plugins](modular_plugins.md) and [](split_mode_feature_development.md).
+See also [Modular Plugins](modular_plugins.md) and [Split Mode Feature Development Guideline](split_mode_feature_development.md).
 
 ## Frontend APIs
 

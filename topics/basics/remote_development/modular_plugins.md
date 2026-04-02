@@ -68,6 +68,9 @@ If the module is optional, it's possible to specify that it should be treated as
 * `intellij.platform.backend`: the module is required if the current process is a regular IDE process, or it's a remote development backend process;
 * `intellij.platform.frontend`: the module is required if the current process is a regular IDE process, or it's a remote development frontend process (JetBrains Client).
 
+These dependencies control whether a module loads after the plugin is installed.
+For how the IDE determines where a plugin can be installed and how backend/frontend plugin sets are synchronized, see [Plugin Management](plugin_management_in_split_mode.md).
+
 Source code and resource files of modules must be located in separate Gradle projects registered in the main module as [submodules](tools_intellij_platform_gradle_plugin_plugins.md#module).
 
 ## Module Descriptor File

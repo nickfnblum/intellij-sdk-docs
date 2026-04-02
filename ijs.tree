@@ -51,6 +51,7 @@
       <toc-element topic="remote_procedure_calls.md"/>
       <toc-element topic="frontend_backend_shared_apis.md"/>
       <toc-element topic="persistent_state_in_split_mode.md"/>
+      <toc-element topic="plugin_management_in_split_mode.md"/>
     </toc-element>
     <toc-element topic="plugin_structure.topic">
       <toc-element topic="plugin_content.md"/>
