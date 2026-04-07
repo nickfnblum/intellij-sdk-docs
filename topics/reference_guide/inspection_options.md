@@ -14,8 +14,8 @@ Currently, there are two ways of providing the inspection options:
 ## Declarative Inspection Options
 <primary-label ref="2023.1"/>
 
-Declarative API allows to:
-* delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [](ui_guidelines_welcome.topic)
+Declarative API allows:
+* delegate component rendering to the platform and make all the inspection options UI consistent and compliant with the [UI guidelines](ui_guidelines_welcome.topic)
 * optimize checking whether the inspection contains any options
 * manipulate options in places other than inspection panels (e.g., in quick fixes)
 * render options in contexts other than IntelliJ Platform-based IDEs
@@ -65,12 +65,12 @@ It enables resolving and other resolve-related features available, making it eas
 
 ### Custom Options Binding Protocol
 
-The default way of binding option form values to fields may be insufficient in more advanced cases.
+The default way of binding option form values to fields may be not enough in more advanced cases.
 It is possible to customize the way of binding options by providing a custom
 [`OptionController`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/OptionController.java)
-from `InspectionProfileEntry.getOptionController()` method.
+from `InspectionProfileEntry.getOptionController()`.
 
-Consider the <ui-path>Properties files | Inconsistent resource bundle</ui-path> global inspection, from bundled **Properties** plugin in IntelliJ IDEA, which reports several types of inconsistencies in <path>.properties</path> files.
+Consider the <ui-path>Properties files | Inconsistent resource bundle</ui-path> global inspection, from the bundled **Properties** plugin in IntelliJ IDEA, which reports several types of inconsistencies in <path>.properties</path> files.
 The inspection allows enabling or disabling reporting specific issue types, which are reported by providers implementing a dedicated interface.
 Information about enabled providers is stored in a map where the key is a provider ID.
 The options panel and value binding are implemented in the following way (see
@@ -112,12 +112,12 @@ It's possible to compose several option controllers into the hierarchy based on 
 It may be useful when some inspections have common configuration options and store the configuration in dedicated objects.
 See
 [`OptComponent.prefix()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/options/OptComponent.java)
-and `OptionController.onPrefix()` methods for more details and example implementation:
+and `OptionController.onPrefix()` methods for more details and an example implementation:
 [`MissingJavadocInspection`](%gh-ic%/java/java-impl/src/com/intellij/codeInspection/javaDoc/MissingJavadocInspection.java).
 
 ### Non-Profile Inspection Options
 
-Sometimes, inspections use options that are rendered in a non-standard way, or are shared with other inspections or other IDE features.
+Sometimes, inspections use options that are rendered in a non-standard way or are shared with other inspections or other IDE features.
 Such a shared configuration can be implemented as a [persistent component](persisting_state_of_components.md) and not have a single owner.
 It is still convenient to be able to configure these options from the inspection panel.
 
@@ -126,7 +126,7 @@ An example of such a case is the <ui-path>Java | Probable bugs | Nullability pro
 Custom Swing controls can be provided by implementing
 [`CustomComponentExtensionWithSwingRenderer`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/CustomComponentExtensionWithSwingRenderer.java)
 and registering the implementation in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.inspectionCustomComponent"/></include>.
-Please note that this API is still in experimental state and may be changed without preserving backward compatibility.
+Please note that this API is still in the experimental state and may be changed without preserving backward compatibility.
 
 **Example:**
 [`JavaInspectionButtons`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/options/JavaInspectionButtons.java)
@@ -136,7 +136,7 @@ providing buttons for configuring options in custom dialogs
 
 > If you target versions 2023.1+ only, it is highly recommended to implement [](#declarative-inspection-options).
 
-UI-based inspection options are provided by implementing a configuration panel using Swing components and returning it from [`InspectionProfileEntry.createOptionsPanel()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionProfileEntry.java) method.
+UI-based inspection options are provided by implementing a configuration panel using Swing components and returning it from [`InspectionProfileEntry.createOptionsPanel()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionProfileEntry.java).
 It returns the panel with option components that bind the provided values to the inspection class fields or other properties, similarly as in the [declarative](#declarative-inspection-options) approach.
 Note that since version 2023.1, this method is ignored if `InspectionProfileEntry.getOptionPane()` returns a non-empty panel.
 
@@ -147,10 +147,10 @@ in version 2022.3, implemented using the UI-approach
 For simple customization requirements, see also:
 * [`SingleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleCheckboxOptionsPanel.java) for single checkbox
 * [`MultipleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
-* [`SingleIntegerFieldOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for single Integer (text field)
+* [`SingleIntegerFieldOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for a single Integer (text field)
 
 > Be careful when you have a hierarchy of inspection classes.
-> For example, if inspection superclass is converted to the declarative approach, any `createOptionsPanel()` methods in subclasses will be ignored.
+> For example, if an inspection superclass is converted to the declarative approach, any `createOptionsPanel()` methods in subclasses will be ignored.
 > If you can't convert all of them at once, you may temporarily add `getOptionsPane()` returning `OptPane.EMPTY` to subclasses, where `createOptionsPanel()` is still used.
 >
 {style="warning"}
