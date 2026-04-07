@@ -124,8 +124,8 @@ Refactoring dialog: builtin "Open in editor" option
 Configurable status bar widgets
 : Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.statusBarWidgetFactory"/></include> to provide widgets that can be disabled or reordered, see [](status_bar_widgets.md).
 
-JCEF Support (_Experimental Feature_)
-: Allows [embedding](embedded_browser_jcef.md) Chromium-based browser in the IDE.
+JCEF Support
+: Allows [embedding](embedded_browser_jcef.md) a Chromium-based browser in the IDE.
 
 Override text presentation for actions depending on menu context
 : Set the [`<override-text>`](plugin_configuration_file.md#idea-plugin__actions__action__override-text) element within the [`<action>`](plugin_configuration_file.md#idea-plugin__actions__action) declaration in <path>[plugin.xml](plugin_configuration_file.md)</path>.
