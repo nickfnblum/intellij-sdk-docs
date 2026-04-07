@@ -21,6 +21,8 @@ The modular template provides:
 * split-mode-oriented Gradle configuration
 * ready-to-use examples of RPC-based communication
 
+## Classic Plugin Template
+
 [IntelliJ Platform Plugin Template][gh:plugin-template] is a GitHub repository that provides a pure boilerplate template to make it easier to create a new Gradle-based plugin project.
 
 The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.
