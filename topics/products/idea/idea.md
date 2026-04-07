@@ -113,3 +113,7 @@ See [Testing in K1 Locally](https://kotlin.github.io/analysis-api/testing-in-k1-
 ### Kotlin Code FAQ
 
 [How to shorten references?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010025120-Add-new-parameter-into-kotlin-data-class-from-IDEA-plugin?page=1#community_comment_360002950760)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

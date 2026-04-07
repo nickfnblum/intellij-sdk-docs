@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
        id="snippets" title="Snippets" is-library="true">
@@ -15,6 +15,14 @@
                 more details. Thanks for your feedback!</p>
         </note>
     </snippet>
+
+    <snippet id="implementationSupport">
+        <p>
+            For plugin implementation support and questions, see the
+            <a href="getting_help.topic" anchor="problems-with-code-support-issues">Getting Help</a> section.
+        </p>
+    </snippet>
+
     <snippet id="subscribeNews">
         <tip title="Staying up to date">
             <p><a href="https://jb.gg/mp-updates">Subscribe to Marketplace Developer News</a> to receive news and

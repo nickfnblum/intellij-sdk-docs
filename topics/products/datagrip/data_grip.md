@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # DataGrip Plugin Development
 
@@ -78,3 +78,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in `DatabaseTools`.
 Test your plugin with any version of DataGrip you wish to support.
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

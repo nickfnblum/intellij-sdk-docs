@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PhpStorm Plugin Development
 
@@ -104,3 +104,7 @@ Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of th
 ### plugin.xml
 
 The dependency on the PHP plugin APIs (`com.jetbrains.php`) must be declared in the <path>[plugin.xml](plugin_configuration_file.md)</path> file, as shown in the tutorial [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml) section.
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

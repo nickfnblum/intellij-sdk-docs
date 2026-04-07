@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PyCharm Plugin Development
 
@@ -93,3 +93,7 @@ See [](intellij_community_plugins_extension_point_list.md) for PyCharm.
 When learning new development configurations, it is helpful to have some representative projects for reference:
 
 * [Flake8 Support](https://github.com/jansorg/pycharm-flake8) Adds support for flake8's `# noqa` comments in PyCharm.
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # WebStorm Plugin Development
 
@@ -101,3 +101,7 @@ When learning new plugin development, it is helpful to have some representative 
 * [JS Toolbox](https://github.com/andresdominguez/jsToolbox)
 * [deep-js-completion](https://github.com/klesun/deep-js-completion)
 * [Run Configuration for TypeScript](https://github.com/bluelovers/idea-run-typescript)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

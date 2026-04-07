@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # RubyMine Plugin Development
 
@@ -93,3 +93,7 @@ When learning new APIs, it is helpful to have some representative projects for r
 * [Ruby-Doc-Adder](https://github.com/aristotll/RubyDocAdder)
 * [Ruby Dynamic Code Insight](https://github.com/JetBrains/ruby-type-inference)
 * [Railways](https://github.com/basgren/railways)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

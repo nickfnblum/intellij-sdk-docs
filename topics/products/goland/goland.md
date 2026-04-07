@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # GoLand Plugin Development
 
@@ -147,3 +147,7 @@ When learning new APIs, it is helpful to have some representative projects for r
 
 * [Go Method Generator](https://github.com/pkondratev/Intellij-go-method-generator)
 * [Go Builder Generator](https://github.com/OddCN/go-builder-generator-idea-plugin)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Rider Plugin Development
 
@@ -98,7 +98,7 @@ fun liftIcon(model: FrontendIconModel): Icon {
 		if (iconLoader == null) {
 			return@getOrPut ReSharperIcons.Special.InvalidIcon
 		}
-		
+
 		val foundIcon = IconLoader.findIcon(model.path, iconLoader)
 		if (foundIcon == null) {
 			return@getOrPut ReSharperIcons.Special.InvalidIcon
@@ -145,3 +145,7 @@ Also note that these plugins might not be up to date with the current SDK.
 * [Xao](https://github.com/hmemcpy/ReSharper.Xao/)
 * [Azure Toolkit for Rider](https://github.com/JetBrains/azure-tools-for-intellij)
 * [T4 language support for both ReSharper and Rider](https://github.com/JetBrains/ForTea)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>

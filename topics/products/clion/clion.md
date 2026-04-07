@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # CLion Plugin Development
 
@@ -88,3 +88,7 @@ When learning new APIs, it is helpful to have some representative projects for r
 
 * [C/C++ Coverage](https://github.com/zero9178/C-Cpp-Coverage-for-CLion)
 * [C/C++ Single File Execution](https://github.com/corochann/SingleFileExecutionPlugin)
+
+## Getting Help
+
+<include from="snippets.topic" element-id="implementationSupport"></include>
