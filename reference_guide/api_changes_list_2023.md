@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2023.*
 
@@ -179,7 +179,10 @@ JsonPath library unbundled
 ### Java Plugin 2023.3
 
 `com.siyeh.ipp.base.Intention` class removed
-: As a part of migration to new experimental [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely. It's a part of implementation module and was never intended to be inherited by external plugins. Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
+:
+As a part of migration to the [`ModCommand`](%gh-ic%/platform/analysis-api/src/com/intellij/modcommand/ModCommand.java) API, the class was removed completely.
+It's a part of the implementation module and was never intended to be inherited by external plugins.
+Consider implementing [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) directly.
 
 `com.intellij.codeInsight.TailTypes` class renamed to `com.intellij.codeInsight.JavaTailTypes`
 : Update code usages.

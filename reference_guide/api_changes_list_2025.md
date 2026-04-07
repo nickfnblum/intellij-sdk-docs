@@ -164,7 +164,7 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.diff.util.ThreeSide.map(Function)` method parameter type changed from `com.intellij.util.Function` to `kotlin.jvm.functions.Function1`
 : Use `kotlin.jvm.functions.Function1` as a parameter.
 
-The experimental `com.intellij.webSymbols` package together with all the classes and extension points has been renamed to `com.intellij.polySymbols`.
+The `com.intellij.webSymbols` package together with all the classes and extension points has been renamed to `com.intellij.polySymbols`.
 : The classes were renamed using pattern `WebSymbol[s]?(.*)` -> `PolySymbol$1`. Some classes have also been moved
 to more specific packages.
 : From other notable changes:
