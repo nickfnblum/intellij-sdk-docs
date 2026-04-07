@@ -75,10 +75,6 @@ In case of doubts, it is recommended to inspect the contents of existing languag
 
 <primary-label ref="2024.1"/>
 
-> Note that bundled translations are in the experimental state.
->
-{style="warning"}
-
 The IntelliJ Platform partially supports providing translations directly bundled in the IDE or plugins.
 See the [translated elements](#translated-elements) list for the elements possible to translate.
 
