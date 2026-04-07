@@ -321,7 +321,7 @@
                             <td colspan="4">
                                 <sup>1</sup>
                                 <i><code>coroutineToIndicator()</code>
-                                    is an experimental API, which was originally internal and created to aid
+                                    was originally internal and created to aid
                                     platform migration.
                                     It is not recommended to switch from the Coroutine Execution Context to the Progress Indicator.
                                     Use it only if there is no other option.</i>
