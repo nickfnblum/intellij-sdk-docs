@@ -18,14 +18,12 @@ val FILE_PATH = "v.list"
 
 val releasesList = mapOf(
   "intellij-platform-gradle-plugin-version" to ReleaseInfo(
-    type = ReleaseInfo.Type.GitHub,
-    url = "https://api.github.com/repos/JetBrains/intellij-platform-gradle-plugin/releases",
-    transformer = { list -> list.first { it.startsWith("2.") } }
+    type = ReleaseInfo.Type.Maven,
+    url = "https://plugins.gradle.org/m2/org/jetbrains/intellij/platform/org.jetbrains.intellij.platform.gradle.plugin/maven-metadata.xml"
   ),
   "gradle-intellij-plugin-version" to ReleaseInfo(
-    type = ReleaseInfo.Type.GitHub,
-    url = "https://api.github.com/repos/JetBrains/intellij-platform-gradle-plugin/releases",
-    transformer = { list -> list.first { it.startsWith("1.") } }
+    type = ReleaseInfo.Type.Maven,
+    url = "https://plugins.gradle.org/m2/org/jetbrains/intellij/org.jetbrains.intellij.gradle.plugin/maven-metadata.xml"
   ),
   "gradle-grammar-kit-plugin-version" to ReleaseInfo(
     type = ReleaseInfo.Type.GitHub,
@@ -42,19 +40,20 @@ val releasesList = mapOf(
 )
 
 val vars = releasesList.mapValues { (key, releaseInfo) ->
-  when (releaseInfo.type) {
-    ReleaseInfo.Type.GitHub -> run {
-      try {
-        val content = URL(releaseInfo.url).readText()
-        Json.decodeFromString<JsonArray>(content)
-          .mapNotNull { it.jsonObject["name"] }
-          .map { it.jsonPrimitive.content.removePrefix("v").removePrefix("Version ") }
-          .run(releaseInfo.transformer)
-      } catch (e: Exception) {
-        println("Cannot resolve the latest '$key' version: ${e.message}")
-        throw e
-      }
+  try {
+    when (releaseInfo.type) {
+      ReleaseInfo.Type.GitHub -> URL(releaseInfo.url).readText()
+        .let { Json.decodeFromString<JsonArray>(it) }
+        .mapNotNull { it.jsonObject["name"] }
+        .map { it.jsonPrimitive.content.removePrefix("v").removePrefix("Version ") }
+        .run(releaseInfo.transformer)
+
+      ReleaseInfo.Type.Maven -> URL(releaseInfo.url).readText()
+        .let(::extractMavenMetadataRelease)
     }
+  } catch (e: Exception) {
+    println("Cannot resolve the latest '$key' version: ${e.message}")
+    throw e
   }
 }.map { (key, version) ->
   "<var name=\"$key\" value=\"$version\"/>"
@@ -86,11 +85,19 @@ file(FILE_PATH).writeText(newFileContent.toString())
 
 fun file(path: String) = File(System.getenv("GITHUB_WORKSPACE") ?: "../../").resolve(path).also(File::createNewFile)
 
+fun extractMavenMetadataRelease(content: String): String =
+  Regex("<release>\\s*([^<]+?)\\s*</release>")
+    .find(content)
+    ?.groupValues
+    ?.get(1)
+    ?.trim()
+    ?: error("Cannot find <release> in Maven metadata")
+
 data class ReleaseInfo(
   val type: Type,
   val url: String,
   val transformer: (List<String>) -> String = { it.first() },
 ) {
 
-  enum class Type { GitHub }
+  enum class Type { GitHub, Maven }
 }
