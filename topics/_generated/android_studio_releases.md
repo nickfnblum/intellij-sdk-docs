@@ -2,6 +2,14 @@
 
 <snippet id="releases_table">
 
+## 2026.*
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Quail 1 &#124; 2026.1.1 Canary 1 | ![Canary][canary] | April 16, 2026 | **2026.1.1.1**<p>AI-261.22158.277.2611.15218332</p> | **2026.1**<p>261.22158.277</p> |
+
+
+
 ## 2025.*
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -709,11 +717,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Quail 1 &#124; 2026.1.1 Canary 1 | ![Canary][canary] | April 16, 2026 | **2026.1.1.1**<p>AI-261.22158.277.2611.15218332</p> | **2026.1**<p>261.22158.277</p> |
 | Panda 4 &#124; 2025.3.4 RC 1 | ![RC][rc] | April 13, 2026 | **2025.3.4.5**<p>AI-253.32098.37.2534.15181008</p> | **2025.3.4**<p>253.32098.37</p> |
 | Panda 4 &#124; 2025.3.4 Canary 4 | ![Canary][canary] | April 9, 2026 | **2025.3.4.4**<p>AI-253.32098.37.2534.15173772</p> | **2025.3.4**<p>253.32098.37</p> |
 | Panda 4 &#124; 2025.3.4 Canary 3 | ![Canary][canary] | April 3, 2026 | **2025.3.4.3**<p>AI-253.32098.37.2534.15136351</p> | **2025.3.4**<p>253.32098.37</p> |
 | Panda 3 &#124; 2025.3.3 Patch 1 | ![Patch][patch] | April 13, 2026 | **2025.3.3.7**<p>AI-253.31033.145.2533.15176040</p> | **2025.3.3**<p>253.31033.145</p> |
-| Panda 3 &#124; 2025.3.3 | ![Release][release] | April 2, 2026 | **2025.3.3.6**<p>AI-253.31033.145.2533.15113396</p> | **2025.3.3**<p>253.31033.145</p> |
 
 [release]: https://img.shields.io/badge/-Release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-Patch-orange?style=flat-square
